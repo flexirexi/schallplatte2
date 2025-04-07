@@ -1,7 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, Main!")
+    return render(request, 'main/index.html')
+
+
+def rooms(request):
+    return render(request, 'main/rooms.html')
+
+
+def forum(request):
+    return render(request, 'main/forum.html')
+
+
+def about(request):
+    return render(request, 'main/about.html')
