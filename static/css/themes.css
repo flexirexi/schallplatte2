@@ -55,8 +55,3 @@ html[theme="light"] {
     --dis-border: #A4B7B6; 
 }
 
-html[theme] nav {
-    background-color: var(--nav-bg);
-    color: var(--link-text-hover);
-    
-}
