@@ -57,5 +57,6 @@ html[theme="light"] {
 
 html[theme] nav {
     background-color: var(--nav-bg);
-    color: var(--link-text-hover)
+    color: var(--link-text-hover);
+    
 }

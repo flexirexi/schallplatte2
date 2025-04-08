@@ -2,7 +2,7 @@
     --nav-height: 55px;
 }
 
-main {
+html[theme] main {
     margin-top: var(--nav-height);
 
 }
