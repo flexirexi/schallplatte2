@@ -4,6 +4,11 @@
 * {
     margin: 0;
     padding: 0;
+    color: var(--text);
+}
+
+main {
+    background-color: var(--bg);
 }
 
 html[theme] nav {
