@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/flexirexi/schallplatte#readme",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }
