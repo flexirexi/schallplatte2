@@ -1,0 +1,36 @@
+@import url("/static/css/themes.css");
+@import url("/static/css/layout.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    box-sizing: border-box;
+}
+
+main {
+    background-color: var(--bg);
+}
+
+html[theme] nav {
+    background-color: var(--nav-bg);
+    color: var(--link-text-hover);
+    padding: 0;
+    min-height: var(--nav-height);
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+html[theme] .navbar-toggler,
+html[theme] .navbar-toggler:focus {
+    border: none;   
+    outline: none;
+    box-shadow: none; 
+
+}
+
+html[theme] .navbar-toggler:active {
+    background-color: #ffffff40;
+}
