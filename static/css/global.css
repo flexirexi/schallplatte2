@@ -1,22 +1,62 @@
+/* 
+INFO: 
+Bootstrap is used here -> in order to overwrite, use: 
+    <selector>[theme]           for elements in all themes, 
+    <selector>[theme="dark"]    for elements only in dark mode,
+    <selector>[theme=light"]    for elements only in light mode
+*/
+
 @import url("/static/css/themes.css");
 @import url("/static/css/layout.css");
 
-* {
+/* 01 Generic STYLES that apply for all html pages ------------------------------ */
+html[theme] * {
     margin: 0;
     padding: 0;
     color: var(--text);
     box-sizing: border-box;
 }
 
-main {
+html[theme] main {
     background-color: var(--bg);
+    padding: 0 15px;
 }
 
 html[theme] nav {
     background-color: var(--nav-bg);
     color: var(--link-text-hover);
-    padding: 0;
+    padding: 0 15px;
     min-height: var(--nav-height);
+}
+
+html[theme] nav a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+html[theme] a:hover {
+    color: var(--link-text-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--link-text-hover);
+    text-decoration-thickness: 1px;
+}
+
+
+/* 02 General classes for all pages --------------------------------------------- */
+html[theme] .btn {
+    background-color: var(--act-bg);
+    color: var(--act-text);
+    border: var(--act-border);
+    padding: 5px 12px;
+    margin: 2px;
+}
+
+html[theme] .btn:hover {
+    background-color: var(--act-bg-hover);
+    color: var(--act-text-hover);
+    border: var(--act-border-hover);
+    text-decoration: none;
 }
 
 .navbar-brand {
@@ -28,9 +68,46 @@ html[theme] .navbar-toggler:focus {
     border: none;   
     outline: none;
     box-shadow: none; 
-
+    transition: background-color 0.4s ease-out;
 }
 
 html[theme] .navbar-toggler:active {
-    background-color: #ffffff40;
+    background-color: #ffffff50;
 }
+
+footer {
+    background-color: var(--bg);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+html[theme] footer a:hover {
+    text-decoration: none;
+}
+
+footer a i {
+    color: var(--text);
+    transition: color 0.4s ease ;
+}
+
+footer a i:hover {
+    color: var(--link);
+    text-decoration: none;
+}
+
+/* 03 specific elements -------------------------------------------------------- */
+
+/* MEDIA QUERIES --------------------------------------------------------------- */
+@media (min-width: 768px) {
+    #btnContactMobile {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+
+}
+
