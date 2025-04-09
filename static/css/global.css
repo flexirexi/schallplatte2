@@ -17,11 +17,6 @@ html[theme] * {
     box-sizing: border-box;
 }
 
-html[theme] main {
-    background-color: var(--bg);
-    padding: 0 15px;
-}
-
 html[theme] nav {
     background-color: var(--nav-bg);
     color: var(--link-text-hover);
@@ -31,7 +26,8 @@ html[theme] nav {
 
 html[theme] nav a {
     text-decoration: none;
-    color: var(--text);
+    color: white;
+    font-size: 16px;
 }
 
 html[theme] a:hover {
@@ -42,21 +38,50 @@ html[theme] a:hover {
     text-decoration-thickness: 1px;
 }
 
+footer {
+    background-color: var(--bg);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--link);
+    width: fit-content;
+}
+
+html[theme] footer a:hover {
+    text-decoration: none;
+}
+
+footer a i {
+    color: var(--text);
+    transition: color 0.4s ease ;
+}
+
+footer a i:hover {
+    color: var(--link);
+    text-decoration: none;
+}
 
 /* 02 General classes for all pages --------------------------------------------- */
 html[theme] .btn {
     background-color: var(--act-bg);
     color: var(--act-text);
-    border: var(--act-border);
-    padding: 5px 12px;
+    border: 1px solid var(--act-border);
+    padding: 6px 16px;
     margin: 2px;
+    font-weight: 600;
 }
 
 html[theme] .btn:hover {
     background-color: var(--act-bg-hover);
     color: var(--act-text-hover);
-    border: var(--act-border-hover);
+    border: 1px solid var(--act-text-hover);
     text-decoration: none;
+    
+}
+
+.navbar-nav .nav-link {
+    font-size: 25px;
 }
 
 .navbar-brand {
@@ -75,35 +100,49 @@ html[theme] .navbar-toggler:active {
     background-color: #ffffff50;
 }
 
-footer {
-    background-color: var(--bg);
-}
-
-footer a {
-    text-decoration: none;
-    color: var(--link);
-}
-
-html[theme] footer a:hover {
-    text-decoration: none;
-}
-
-footer a i {
-    color: var(--text);
-    transition: color 0.4s ease ;
-}
-
-footer a i:hover {
-    color: var(--link);
-    text-decoration: none;
-}
 
 /* 03 specific elements -------------------------------------------------------- */
+#btContactDesktop {
+    margin-right: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#theme-toggle {
+    background-color: #ffffff20;
+    border: var(--act-text);
+    margin: 10px 15px;
+}
+
+#language-toggle {
+    display:none;
+    background-color: var(--act-text);
+    border: var(--act-text);
+}
+
+#theme-toggle:hover,
+#language-toggle:hover {
+    background-color: #ffffff50;
+}
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {
+    .btn {
+        padding: 10px 18px;
+    }
+
     #btnContactMobile {
         display: none;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 20px; 
+    }
+
+    #theme-toggle {
+        border: var(--act-text);
+        margin-left: 10px;
+        margin-right: 0;
     }
 }
 
