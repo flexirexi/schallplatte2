@@ -58,13 +58,25 @@ html[theme] .hero span {
     color: white;
 }
 
+html[theme=dark] .card {
+    background-color: #1a242e;
+    border: none;
+}
+
+.index_cards_horizontal {
+    height: 8px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: var(--link);
+}
+
 html[theme] .container {
     max-width: 1000px;
 }
 
 html[theme] .index_section {
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 
