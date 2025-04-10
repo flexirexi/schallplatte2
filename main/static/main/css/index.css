@@ -26,6 +26,7 @@ html[theme] header {
 html[theme] main {
     background-color: var(--bg);
     padding: 0 15px;
+    justify-content: center;
 }
 
 /* 02 General classes for all pages --------------------------------------------- */
@@ -56,6 +57,16 @@ html[theme] .hero-text {
 html[theme] .hero span {
     color: white;
 }
+
+html[theme] .container {
+    max-width: 1000px;
+}
+
+html[theme] .index_section {
+    text-align: center;
+    padding: 20px 0;
+}
+
 
 /* 03 specific elements -------------------------------------------------------- */
 html[theme] .tHeader11 {

@@ -14,7 +14,7 @@ html {
     height: 100%;
 }
 html[theme] * {
-    margin: 0;
+ 
     padding: 0;
     color: var(--text);
     box-sizing: border-box;
@@ -56,10 +56,14 @@ html[theme] a:hover {
 }
 
 footer {
-    background-color: var(--bg);
+    background-color: var(--nav-bg);
 }
 
-footer a {
+html[theme] footer p {
+    color: white;
+}
+
+html[theme] footer a {
     text-decoration: none;
     color: var(--link);
     width: fit-content;
@@ -69,12 +73,12 @@ html[theme] footer a:hover {
     text-decoration: none;
 }
 
-footer a i {
-    color: var(--text);
+html[theme] footer a i {
+    color: white;
     transition: color 0.4s ease ;
 }
 
-footer a i:hover {
+html[theme] footer a i:hover {
     color: var(--link);
     text-decoration: none;
 }
