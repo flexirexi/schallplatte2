@@ -28,23 +28,23 @@
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="{% static 'img/logos/gold_vinyl.webp' %}" alt="Logo" height="50" class="me-2">
             </a>
-            <a id="btnContactMobile" href="#" class="btn nav-contact-btn ms-auto me-5" data-lang="tNavContact">Kontakt</a>
+            <a id="btnContactMobile" href="#" class="btn nav-contact-btn ms-auto me-5" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Kontakt</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-3">
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: #48C9B0;">Home</a></li>
-                    <li class="nav-item"><a data-lang="tStudio" class="nav-link" href="#">Team</a></li>
-                    <li class="nav-item"><a data-lang="tServices" class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a data-lang="tTeam" class="nav-link" href="{% url 'about' %}">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: #48C9B0;" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Home</a></li>
+                    <li class="nav-item"><a data-lang="tStudio" class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Team</a></li>
+                    <li class="nav-item"><a data-lang="tServices" class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Services</a></li>
+                    <li class="nav-item"><a data-lang="tTeam" class="nav-link" href="{% url 'about' %}" data-bs-toggle="collapse" data-bs-target="#navbarNav" >About us</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a id="btContactDesktop" href="#" class="btn btn-outline-light nav-contact-btn" data-lang="tNavContact">Kontakt</a>
+                        <a id="btContactDesktop" href="#" class="btn btn-outline-light nav-contact-btn" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Kontakt</a>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-outline-light" id="theme-toggle">
+                        <button class="btn btn-outline-light" id="theme-toggle" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
                             <i class="fas fa-sun" style="color: #b7b7b7;"></i> <!-- Standard Icon für Dark Mode -->
                         </button>
                     </li>
@@ -64,7 +64,7 @@
 
 
     <!-- Footer -->
-    <footer class=" ">
+    <footer class="  ">
         <p class="m-0 text-center">Made by World</p><br>
         <p class="m-0 text-center">Meet us: <br><br>
             <a href="https://www.facebook.com" class="ms-4" target="_blank" rel="noopener">
