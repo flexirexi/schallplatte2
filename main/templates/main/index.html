@@ -7,11 +7,18 @@
 
 
 {% block content %}
-<!-- index.html content starts here -->
-<main class="flex-shrink-0 main-bg">
-    <header class="hero">
-        <div><img src="#" alt="hero section image"></div>
-    </header>
+<!-- index.html content starts here ------------------------------------------------------------->
+<header class="hero">
+    <div class="hero-image">
+        <img src="{% static 'img/istock/istock01.jpg' %}" class="slide" alt="hero section  image: big rehearsal room">
+    </div>
+    <div class="hero-text">
+        <span data-lang="tHeader11" class="small">A</span>
+        <span data-lang="tHeader21" class="xxl line">modern studio</span>
+        <span data-lang="tHeader31" class="small line text-start">in <span data-lang="tHeader32" class="gap">a </span><span data-lang="tHeader33" class="xxl">great community</span></span>
+    </div>
+</header>
+<main class="flex-shrink-0">
 </main>
-<!-- index.html content ends here -->
+<!-- index.html content ends here --------------------------------------------------------------->
 {% endblock %}

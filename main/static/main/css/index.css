@@ -10,15 +10,45 @@ Bootstrap is used here -> in order to overwrite, use:
 @import url("/static/css/layout.css");
 
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
+html[theme] header {
+    margin-top: var(--nav-height);
+    background-color: var(--bg);
+    overflow: hidden;
+
+    min-height: calc(100vh - var(--nav-height));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 html[theme] main {
     background-color: var(--bg);
     padding: 0 15px;
-    margin-top: var(--nav-height);
 }
+
 /* 02 General classes for all pages --------------------------------------------- */
 html[theme] .hero {
-    height: calc(100vh - var(--nav-height));
-    background-color: var(--bg);
+
+}
+
+html[theme] .hero img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+html[theme] .hero-text {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    width: 90%;
+    font-weight: bold;
+    line-height: 1.2;   
+    text-shadow: 2px 3px 6px #000000c8;
 }
 /* 03 specific elements -------------------------------------------------------- */
 
