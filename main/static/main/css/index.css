@@ -54,25 +54,15 @@ html[theme] .hero-text {
     font-size: 2.5rem;
 }
 
-html[theme] .hero span {
-    color: white;
-}
 
-html[theme=dark] .card {
-    background-color: #1a242e;
-    border: none;
-}
 
 .index_cards_horizontal {
-    height: 8px;
+    height: 10px;
     width: 100%;
-    border-radius: 20px;
-    background-color: var(--link);
+    border-radius: 15px;
+    
 }
 
-html[theme] .container {
-    max-width: 1000px;
-}
 
 html[theme] .index_section {
     text-align: center;
@@ -88,7 +78,7 @@ html[theme] .tHeader11 {
 }
 
 html[theme] .tHeader21 {
-    font-size: 2rem;
+    font-size: 3rem;
     display: block;
     margin-left: 5vw;
 }
@@ -101,7 +91,7 @@ html[theme] .tHeader31 {
 
 .tHeader32 {
     display: inline;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 }
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {

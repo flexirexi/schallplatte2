@@ -2,6 +2,7 @@
     --text: #ecf0f1;
     --text2: #b8b8b8;
     --accent: #ed852a;
+    --accent2: #c0db79;
     --title: #ecf0f1;  
     --title-shadow: #000000d8;
     --link: #48C9B0;
@@ -55,3 +56,14 @@ html[theme="light"] {
     --dis-border: #A4B7B6; 
 }
 
+html[theme] .color1 {
+    background-color: var(--link);
+}
+
+html[theme] .color2 {
+    background-color: var(--accent);
+}
+
+html[theme] .color3 {
+    background-color: var(--accent2);
+}

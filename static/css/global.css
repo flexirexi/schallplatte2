@@ -9,6 +9,7 @@ Bootstrap is used here -> in order to overwrite, use:
 @import url("/static/css/themes.css");
 @import url("/static/css/layout.css");
 
+
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
 html {
     height: 100%;
@@ -91,6 +92,7 @@ html[theme] .btn {
     padding: 6px 16px;
     margin: 2px;
     font-weight: 600;
+    width: fit-content;
 }
 
 html[theme] .btn:hover {
@@ -119,6 +121,30 @@ html[theme] .navbar-toggler:focus {
 
 html[theme] .navbar-toggler:active {
     background-color: #ffffff50;
+}
+
+html[theme] .hero span {
+    color: white;
+}
+
+html[theme] .card {
+    transition: transform  0.3s ease-out;
+    box-shadow: 1px 2px 8px #00000040;
+}
+
+html[theme] .card:hover {
+    transform: translate(0, -3px);
+    box-shadow: 1px 3px 10px #00000060;
+}
+
+html[theme="dark"] .card {
+    background-color: #1a242e;
+    border: none;
+}
+
+
+html[theme] .container {
+    max-width: 1000px;
 }
 
 
