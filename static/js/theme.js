@@ -1,11 +1,12 @@
+import { collapseNavBar } from "/static/main/js/base.js";
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
     // const savedTheme = localStorage.getItem("theme") || "dark";
     // html.setAttribute("theme", savedTheme);
     // themeIcon.classList.add(savedTheme === "light" ? "fa-moon" : "fa-sun");
     
-
-
     themeToggle.addEventListener("click", toggler);
 
 });
@@ -22,4 +23,5 @@ function toggler() {
     // change icon
     themeIcon.classList.remove("fa-moon", "fa-sun");
     themeIcon.classList.add(newTheme === "dark" ? "fa-sun": "fa-moon");
+    collapseNavBar();
 }
