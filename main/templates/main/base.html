@@ -34,10 +34,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-3">
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: #48C9B0;" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Home</a></li>
-                    <li class="nav-item"><a data-lang="tStudio" class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Team</a></li>
-                    <li class="nav-item"><a data-lang="tServices" class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#navbarNav" >Services</a></li>
-                    <li class="nav-item"><a data-lang="tTeam" class="nav-link" href="{% url 'about' %}" data-bs-toggle="collapse" data-bs-target="#navbarNav" >About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}" style="color: #48C9B0;" >Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'rooms' %}">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'forum' %}">Forum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About us</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -65,7 +65,7 @@
 
     <!-- Footer -->
     <footer>
-        <p class="m-0 text-center">Meet us: <br><br>
+        <p class="m-0 text-center mt-4">Meet us: <br><br>
             <a href="https://www.facebook.com" class="" target="_blank" rel="noopener">
                 <i class="fab fa-facebook-square fa-3x"></i>
             </a>

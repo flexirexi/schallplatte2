@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "main/base.html" %}
 {% load static %}
 
 {% block extra_css %}
@@ -36,6 +36,7 @@
         </p>
         <button  class="btn btn-primary" id="btn_register">Register</button>
     </section>
+    <hr>
 
     <!-- SECTION ROOM CATEGORIES --------------->
     <section class="index_section">
@@ -64,7 +65,7 @@
                         4 rooms, suitable for up to 5 people. Ideal for rehearsal, jamming, or writing sessions.
                         Comfortable chairs for creative exchange, A drum set, guitar/ bass amps and microphones 
                         are standard — two rooms also include synthesizers. One room stands out with a grand piano (Flügel).
-                        
+                        <a href="{% url 'rooms' %}">More</a>
                     </p>
                     <div class="index_cards_horizontal color1 mt-auto mb-1"></div>
                   </div>
@@ -87,6 +88,7 @@
         
         <button class="btn btn-primary mt-5" id="btn_book_room">Book now</button>
     </section>
+    <hr>
 
     <!-- SECTION FORUM ANNOUNCEMENT --------------->
     <div class="index_section container text-center">
@@ -100,8 +102,9 @@
             You want to practice saxophone but don’t want to annoy anyone at home? Come on in and meet others just like you!
             <br><br>
             Sooner or later, you’ll meet fellow artists here. Just register and book your room!
-            <br><br>
+            
         </p>
+        <button class="btn btn-primary mt-5" id="btn_book_room">Tell me more</button>
     </div>
 </main>
 <!-- index.html content ends here --------------------------------------------------------------->
