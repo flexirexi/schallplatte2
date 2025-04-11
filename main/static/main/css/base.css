@@ -27,7 +27,7 @@ html[theme] h6 {
 }
 
 html[theme] body {
-    background-color: var(--bg);
+    background-color: var(--bg2);
 }
 
 html[theme] nav {
@@ -154,7 +154,7 @@ html[theme="dark"] .card {
 
 
 html[theme] .container {
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 
