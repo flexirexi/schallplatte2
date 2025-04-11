@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static', # for global css, js
+    BASE_DIR / 'static',  # for global css, js
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # (für Heroku!!)

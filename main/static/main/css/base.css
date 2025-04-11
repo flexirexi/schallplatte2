@@ -11,12 +11,7 @@ Bootstrap is used here -> in order to overwrite, use:
 
 
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
-html {
-    height: 100%;
-}
 html[theme] * {
- 
-    
     color: var(--text);
     box-sizing: border-box;
 }
@@ -28,7 +23,7 @@ html[theme] h4,
 html[theme] h5,
 html[theme] h6 {
     color: var(--title);
-    text-shadow: 1px 2px 4px var(--title-shadow);
+    text-shadow: 1px 2px 3px var(--title-shadow);
 }
 
 html[theme] body {
@@ -42,19 +37,34 @@ html[theme] nav {
     min-height: var(--nav-height);
 }
 
+html[theme] a {
+    color: var(--link);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+html[theme] a:hover {
+    color: currentColor;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+}
+
 html[theme] nav a {
     text-decoration: none;
     color: white;
     font-size: 16px;
 }
 
-html[theme] a:hover {
+html[theme] nav a:hover {
     color: var(--link-text-hover);
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-color: var(--link-text-hover);
     text-decoration-thickness: 1px;
 }
+
 
 footer {
     background-color: var(--nav-bg);
