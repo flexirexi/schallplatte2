@@ -1,0 +1,9 @@
+:root {
+    --nav-height: 58px;
+    --padding-horizontal: 15px;
+}
+
+html[theme] main {
+    margin-top: var(--nav-height);
+
+}

@@ -1,0 +1,88 @@
+/* 
+INFO: 
+Bootstrap is used here -> in order to overwrite, use: 
+    <selector>[theme]           for elements in all themes, 
+    <selector>[theme="dark"]    for elements only in dark mode,
+    <selector>[theme=light"]    for elements only in light mode
+*/
+
+@import url("/static/css/themes.css");
+@import url("/static/css/layout.css");
+
+/* 01 Generic STYLES that apply for all html pages ------------------------------ */
+
+
+html[theme] main {
+    background-color: var(--bg);
+    padding: 0;
+    justify-items: center;
+    margin-top: 0;
+}
+
+/* 02 General classes for all pages --------------------------------------------- */
+html[theme] .hero {
+    margin-top: var(--nav-height);
+    background-color: transparent;
+    display: block;
+    justify-items: center;
+    opacity: 0.8;
+}
+
+html[theme] .hero-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+html[theme] .hero img {
+    height: 200px;
+    max-width: 50vw;
+}
+
+html[theme] .hero-text {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    line-height: 1.6;   
+    text-shadow: 2px 3px 6px #000000c8;
+    font-size: 2.5rem;
+}
+
+html[theme] .hero-text h1 {
+    color: var(--schallplatte);
+    background-color: var(--bg);
+}
+
+html[theme] .card {
+    width: 80%;
+    max-width: 450px;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+}
+
+
+
+/* 03 specific elements -------------------------------------------------------- */
+#navbar-links {
+    display: none;
+}
+
+html[theme] #navbar-logo {
+    display: none;
+}
+
+html[theme] #login-nav {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+html[theme] #login-nav .active {
+    font-weight: bold;
+}
+
+/* MEDIA QUERIES --------------------------------------------------------------- */
+@media (min-width: 768px) {
+
+
+}
