@@ -1,0 +1,64 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load static %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock head_title %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'user/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<main class="container">
+  <div class="hero">
+    <div class="hero-image">
+        <img src="{% static 'img/logos/gold_vinyl.webp' %}" class="slide" alt="hero section  image: big rehearsal room">
+    </div>
+    <div class="hero-text">
+        <h1>Schallplatte</h1>
+    </div>
+  </div>
+
+  <section class="card">
+    <nav id="login-nav">
+      
+
+          <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 mt-3 offset-md-2">
+                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                        <div id="no-account">No account?<a id="sign-up" class="ms-2" href="{% url 'account_signup' %}">Sign Up</a></div>
+                        <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab" tabindex="0">
+          
+          <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ signup_form.as_p }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            
+            <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+          </form>
+
+    </nav>
+  </section>
+</main>
+
+{% endblock content %}

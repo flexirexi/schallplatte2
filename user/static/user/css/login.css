@@ -53,13 +53,51 @@ html[theme] .hero-text h1 {
 }
 
 html[theme] .card {
-    width: 80%;
-    max-width: 450px;
+    width: 70%;
+    max-width: 350px;
     justify-content: center;
     text-align: center;
-    padding: 15px;
+    padding: 0;
     margin: 20px auto;
 }
+
+form {
+    justify-items: center;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    min-width: 200px;
+    background-color: var(--bg);
+    border-radius: 5px;
+    border: 3px solid #00000050;
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+form p:last-of-type {
+    display: flex;
+    margin-bottom: 2px;
+    margin-top: -7px;
+    justify-self: right;
+}
+
+form p:last-of-type input {
+    height: 18px;
+    width: 18px;
+    min-width: unset;
+    margin: auto 0 auto 0;
+    padding: 0;
+}
+
+form p:last-of-type label {
+    min-width: 120px;
+    margin: auto 5px auto auto;
+}
+
 
 
 
@@ -79,6 +117,16 @@ html[theme] #login-nav {
 
 html[theme] #login-nav .active {
     font-weight: bold;
+}
+
+#no-account {
+    font-size: 0.9rem;
+    margin: 20px auto;
+}
+
+#no-account a {
+    color: var(--link);
+    font-size: 0.9rem;
 }
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
