@@ -7,7 +7,145 @@
 
 
 {% block content %}
-<!-- index.html content starts here -->
-<h1>ABOUT PAGE!</h1>
-<!-- index.html content ends here -->
+<!-- index.html content starts here --------------------------------------------------->
+<main class="container">
+  <div class="hero">
+    <div class="hero-image">
+        <img src="{% static 'img/free/schallplatte01.jpg' %}" class="slide" alt="hero section  image: big rehearsal room">
+    </div>
+    <div class="hero-text">
+        <h1>Team</h1>
+    </div>
+  </div>
+  <section class="about_section">
+    <div class="row ">
+      <div class="card col-12 col-md-4 ms-auto me-auto mb-3 mt-3 p-4">
+        <h4>"Max Planck"</h4>
+        <br>
+        <p>
+          Co-Founder of the music center. He plays Piano and the organ since he can think. 
+          While studying physics, he never stopped composing sonatas and other pieces for the piano. After a while, he met 
+          somebody who shares the same interest. So, the Idea of SCHALLPLATTE was born. Now, Max manages all events of this center 
+          as well as our new project, the online forum.
+        </p>
+      </div>
+      <div class="card col-12 col-md-4 ms-auto me-auto mb-4 mt-3 p-4">
+        <h4>"Albert Einstein"</h4>
+        <br>
+        <p>
+          Co-Founder of the music center. Just like Max, he plays every day. However, the instrument that stole his heart 
+          is the violine. He uses to say that he would have become a musician if he wasn't a physicist. Albert takes care of
+          all the business related work. Also, he is giving violine lessons. 
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="hero">
+    <div class="hero-image">
+        <img src="{% static 'img/other/my_image.png' %}" class="slide" alt="hero section  image: big rehearsal room">
+    </div>
+    <div class="hero-text">
+        <h1>History</h1>
+    </div>
+  </div>
+
+  <section class="about_section">
+    <h1 class="fs-1 ms-5">2024</h1>
+        <div class="card p-4 milestone">
+          <div class="card_flex_box d-flex">
+            <div class="date_card text-center col-1">
+              <h1 class="fs-1">09</h1>
+              <p>April</p>
+            </div>
+            <div class="card_content">
+              <h5>Milestone 1: the idea</h5>
+              <br>
+              <p>
+                Albert and Max one day met for a coffee talking about music. The idea emerged that they wanted to build place
+                where musicians can meet up and share their interest and devotion for music. Practicing instruments, meet the 
+                peer group. Share excitement for own compositions. They decided to make the first move.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-4 milestone">
+          <div class="card_flex_box d-flex">
+            <div class="date_card text-center col-1">
+              <h1 class="fs-1">30</h1>
+              <p>May</p>
+            </div>
+            <div class="card_content">
+              <h5>Milestone 2: the purchase</h5>
+              <br>
+              <p>
+                We found an old building that felt just right 
+                for what we had in mind. Sure, there was a lot of work ahead - but we were determined to bring it to life.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-4 milestone">
+          <div class="card_flex_box d-flex">
+            <div class="date_card text-center col-1">
+              <h1 class="fs-1">12</h1>
+              <p>June</p>
+            </div>
+            <div class="card_content">
+              <h5>Milestone 3: the hard work</h5>
+              <br>
+              <p>
+                There was a ton of work to do. First, we tackled the electrics - good music gear needs stable power, 
+                especially those AMPs that love to gobble up energy. Next came the bathrooms and the cafeteria. 
+                Albert was happy - finally, there was coffee at the center.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-4 milestone">
+          <div class="card_flex_box d-flex">
+            <div class="date_card text-center col-1">
+              <h1 class="fs-1">25</h1>
+              <p>July</p>
+            </div>
+            <div class="card_content">
+              <h5>Milestone 4: the rehearsal rooms are ready!</h5>
+              <br>
+              <p>
+                That was definitely the most expensive and time-consuming part of the whole project. Which room should host 
+                which instruments? Honestly - until then, we'd never really thought about how pricey music gear actually is.
+                Not to mention the sound isolation, acoustic panels, paint, flooring... you name it.
+                But in the end? We pulled it off - and pretty well, too.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-4 milestone">
+          <div class="card_flex_box d-flex">
+            <div class="date_card text-center col-1">
+              <h1 class="fs-1">12</h1>
+              <p>August</p>
+            </div>
+            <div class="card_content">
+              <h5>Milestone 5: Opening Party</h5>
+              <br>
+              <p>
+                An unforgettable moment -almost 50 people showed up to our opening party. And not just for the barbecue and beer.
+                SCHALLPLATTE is finally up and running!
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+    </div>
+  </section>
+</main>
+<!-- index.html content ends here ----------------------------------------------------->
 {% endblock %}
