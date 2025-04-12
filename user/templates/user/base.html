@@ -17,7 +17,7 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- base CSS -->
-    <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/base.css' %}">
         {% block extra_css %}{% endblock %}
 </head>
 
@@ -29,7 +29,7 @@
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="{% static 'img/logos/gold_vinyl.webp' %}" alt="Logo" height="50" class="me-2">
             </a>
-            <a id="btnLoginMobile" href="{% url 'user:login' %}" class="btn nav-contact-btn ms-auto me-3">Login</a>
+            <a id="btnLoginMobile" href="#" class="btn nav-contact-btn ms-auto me-3">Login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,7 +42,7 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a id="btLoginDesktop" href="{% url 'user:login' %}" class="btn btn-outline-light nav-contact-btn" >Login</a>
+                        <a id="btLoginDesktop" href="#" class="btn btn-outline-light nav-contact-btn" >Login</a>
                     </li>
                     <li class="nav-item">
                         <button class="btn btn-outline-light" id="theme-toggle" >
@@ -93,7 +93,7 @@
     <!-- theme switcher -->
     <script type="module" src="{% static 'js/theme.js' %}"></script>
     <!-- base.js script -->
-    <script type="module" src="{% static 'main/js/base.js' %}"></script>
+    <script type="module" src="{% static 'user/js/base.js' %}"></script>
 </body>
 
 </html>

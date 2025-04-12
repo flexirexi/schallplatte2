@@ -1,0 +1,118 @@
+{% extends "user/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'user/css/login.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<!-- index.html content starts here ------------------------------------------------------------->
+<header class="hero">
+    <div class="hero-image">
+        <img src="{% static 'img/istock/istock01.jpg' %}" class="slide" alt="hero section  image: big rehearsal room">
+    </div>
+    <div class="hero-text">
+        <div class="tHeader11"><span >Every</span></div>
+        <div class="tHeader21"><span >musician</span></div>
+        <div class="tHeader31"><span >will </span> <span class="tHeader32">find a room</span></div>
+    </div>
+</header>
+
+<main class="container ">
+    <!-- SECTION DESCRIPTION --------------->
+    <section class="index_section">
+        <h2>We make the vinyl sound</h2>
+        <br>
+        <p>
+            Our music center offers six rehearsal rooms - tailor-made for a community of creative and professional musicians, 
+            bands, and solo practitioners. Everyone is welcome! 
+            <br><br>You play guitar but aren't in a band? 
+            No problem. You love classical music but can't host a grand piano at home? You're in the right place. 
+            You want to practice saxophone but don't want to annoy anyone at home? Come on in and meet others just like you!
+            <br><br>
+            Sooner or later, you'll meet fellow artists here. Just register and book your room!
+            <br><br>
+        </p>
+        <button  class="btn btn-primary" id="btn_register">Register</button>
+    </section>
+    <hr>
+
+    <!-- SECTION ROOM CATEGORIES --------------->
+    <section class="index_section">
+        <h2>Our Rooms</h2>
+        
+        <div class="container mt-0">
+            <div class="row g-4"> <!-- g-3 = ca. 15px -->
+                <div class="col-12 col-md-4 d-flex">
+                    <div class="card p-4 h-100">
+                        <h4>LARGE ROOMS</h4>
+                        <strong>big bands</strong>
+                        <br>
+                        <p>
+                            We have two big rooms. Up to 10 people have a place here, whether to perform or just enjoy.
+                            One drum set, 4 guitar amps, 2 bass amps, 2 synths, several mics and small sofa. Interested?
+                            <br>
+                            <a href="{% url 'rooms' %}" >More...</a>
+                            <br><br>  
+                        </p>
+                        <div class="index_cards_horizontal color2 mt-auto mb-1"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex">
+                    <div class="card p-4 h-100">
+                        <h4>MEDIUM ROOMS</h4>
+                        <strong>the classic</strong>
+                        <br>
+                        <p>
+                            4 rooms, suitable for up to 5 people. Ideal for rehearsal, jamming, or writing sessions.
+                            Comfortable chairs for creative exchange, A drum set, guitar/ bass amps and microphones 
+                            are standard — two rooms also include synthesizers. One room stands out with a grand piano (Flügel).
+                            <br>
+                            <a href="{% url 'rooms' %}">More...</a>
+                            <br><br>
+                        </p>
+                        <div class="index_cards_horizontal color1 mt-auto mb-1"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 d-flex">
+                    <div class="card p-4 h-100">
+                        <h4>SMALL ROOMS</h4>
+                        <strong>take your time</strong>
+                        <br>
+                        <p>
+                            The brain cells of our center. Our two smaller rooms are perfect for focused practice, with space for up to 3 people. One features an upright piano, the other a drum set.
+                            Both are equipped with two chairs to encourage creative or pedagogical exchange.
+                            <br>
+                            <a href="{% url 'rooms' %}" >More...</a>
+                            <br><br>
+                        </p>
+                        <div class="index_cards_horizontal color3 mt-auto mb-1"></div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary mt-5" id="btn_book_room">Book now</button>
+    </section>
+    <hr>
+
+    <!-- SECTION FORUM ANNOUNCEMENT --------------->
+    <div class="index_section container text-center">
+        <h2>Forum Announcement</h2>
+        <br>
+        <p>
+            Our music center offers six rehearsal rooms – tailor-made for a community of creative and professional musicians, 
+            bands, and solo practitioners. Everyone is welcome! 
+            <br><br>You play guitar but aren’t in a band? 
+            No problem. You love classical music but can’t host a grand piano at home? You’re in the right place. 
+            You want to practice saxophone but don’t want to annoy anyone at home? Come on in and meet others just like you!
+            <br><br>
+            Sooner or later, you’ll meet fellow artists here. Just register and book your room!
+            
+        </p>
+        <button class="btn btn-primary mt-5" id="btn_book_room">Tell me more</button>
+    </div>
+</main>
+<!-- index.html content ends here --------------------------------------------------------------->
+{% endblock %}
