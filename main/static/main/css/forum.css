@@ -54,6 +54,10 @@ html[theme] .hero-text {
     padding: 80px 0;
 }
 
+html[theme] .hero-text h1 {
+    color: var(--act-bg);
+}
+
 .forum_section {
     padding: 40px;
 }

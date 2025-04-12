@@ -54,6 +54,11 @@ html[theme] .hero-text {
     padding: 60px 0;
 }
 
+html[theme] .hero-text h1 {
+    color: var(--act-bg);
+}
+
+
 .about_section {
     padding: 30px;
 }
