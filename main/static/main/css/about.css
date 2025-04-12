@@ -60,17 +60,7 @@ html[theme] .hero-text {
 
 .about_section img {
     height: 190px;
-    border-radius: 15px;
-    
-}
-
-.date_card {
-    height: 95px;
-    width: 95px;
-    background-color: var(--bg2);
-    padding-top: 7px;
-    align-self: center;
-    transform: translate(-35%, 0);
+    border-radius: 15px;   
 }
 
 html[theme] .milestone {
@@ -80,11 +70,60 @@ html[theme] .milestone {
     margin-top: 30px;
 }
 
+html[theme] .mobile_card_switcher {
+    display: block;
+    justify-items: center;
+    position:relative;
+    align-items: unset;
+}
+
+.date_card {
+    height: 95px;
+    width: 95px;
+    background-color: var(--bg2);
+    padding-top: 10px;
+    transform: translate(0, -40%);
+    position: absolute;
+    left: calc(50% - 47.5px);
+}
+
+html[theme] .card_content {
+    margin-top: 70px;
+}
+
+
 
 /* 03 specific elements -------------------------------------------------------- */
 
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {
-
+    html[theme] .milestone {
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 30px;
+    }
+    
+    html[theme] .mobile_card_switcher {
+        display: flex;
+        justify-items: unset;
+        position:unset;
+        align-items: center;
+        
+    }
+    
+    .date_card {
+        height: 95px;
+        width: 95px;
+        background-color: var(--bg2);
+        padding-top: 7px;
+        transform: translate(-40%,0);
+        position: unset;
+        left: unset;
+    }
+    
+    html[theme] .card_content {
+        margin-top: unset;
+    }
 }

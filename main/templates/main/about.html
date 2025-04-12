@@ -8,6 +8,7 @@
 
 {% block content %}
 <!-- index.html content starts here --------------------------------------------------->
+<!-- Team section and hero --------------------------------------------------->
 <main class="container">
   <div class="hero">
     <div class="hero-image">
@@ -41,6 +42,7 @@
     </div>
   </section>
 
+  <!-- History Section and hero --------------------------------------------->
   <div class="hero">
     <div class="hero-image">
         <img src="{% static 'img/other/my_image.png' %}" class="slide" alt="hero section  image: big rehearsal room">
@@ -51,97 +53,116 @@
   </div>
 
   <section class="about_section">
+    <!-- Milestones 2024 ---------------------------------------->
     <h1 class="fs-1 ms-5">2024</h1>
-        <div class="card p-4 milestone">
-          <div class="card_flex_box d-flex">
-            <div class="date_card text-center col-1">
-              <h1 class="fs-1">09</h1>
-              <p>April</p>
-            </div>
-            <div class="card_content">
-              <h5>Milestone 1: the idea</h5>
-              <br>
-              <p>
-                Albert and Max one day met for a coffee talking about music. The idea emerged that they wanted to build place
-                where musicians can meet up and share their interest and devotion for music. Practicing instruments, meet the 
-                peer group. Share excitement for own compositions. They decided to make the first move.
-              </p>
-            </div>
-          </div>
+    <div class="card p-4 milestone">
+      <div class="mobile_card_switcher">
+        <div class="date_card text-center col-1">
+          <h1 class="fs-1">09</h1>
+          <p>April</p>
         </div>
-
-        <div class="card p-4 milestone">
-          <div class="card_flex_box d-flex">
-            <div class="date_card text-center col-1">
-              <h1 class="fs-1">30</h1>
-              <p>May</p>
-            </div>
-            <div class="card_content">
-              <h5>Milestone 2: the purchase</h5>
-              <br>
-              <p>
-                We found an old building that felt just right 
-                for what we had in mind. Sure, there was a lot of work ahead - but we were determined to bring it to life.
-              </p>
-            </div>
-          </div>
+        <div class="card_content">
+          <h5>Milestone 1: the idea</h5>
+          <br>
+          <p>
+            Albert and Max one day met for a coffee talking about music. The idea emerged that they wanted to build place
+            where musicians can meet up and share their interest and devotion for music. Practicing instruments, meet the 
+            peer group. Share excitement for own compositions. They decided to make the first move.
+          </p>
         </div>
+      </div>
+    </div>
 
-        <div class="card p-4 milestone">
-          <div class="card_flex_box d-flex">
-            <div class="date_card text-center col-1">
-              <h1 class="fs-1">12</h1>
-              <p>June</p>
-            </div>
-            <div class="card_content">
-              <h5>Milestone 3: the hard work</h5>
-              <br>
-              <p>
-                There was a ton of work to do. First, we tackled the electrics - good music gear needs stable power, 
-                especially those AMPs that love to gobble up energy. Next came the bathrooms and the cafeteria. 
-                Albert was happy - finally, there was coffee at the center.
-              </p>
-            </div>
-          </div>
+    <div class="card p-4 milestone">
+      <div class="mobile_card_switcher">
+        <div class="date_card text-center col-1">
+          <h1 class="fs-1">30</h1>
+          <p>May</p>
         </div>
-
-        <div class="card p-4 milestone">
-          <div class="card_flex_box d-flex">
-            <div class="date_card text-center col-1">
-              <h1 class="fs-1">25</h1>
-              <p>July</p>
-            </div>
-            <div class="card_content">
-              <h5>Milestone 4: the rehearsal rooms are ready!</h5>
-              <br>
-              <p>
-                That was definitely the most expensive and time-consuming part of the whole project. Which room should host 
-                which instruments? Honestly - until then, we'd never really thought about how pricey music gear actually is.
-                Not to mention the sound isolation, acoustic panels, paint, flooring... you name it.
-                But in the end? We pulled it off - and pretty well, too.
-              </p>
-            </div>
-          </div>
+        <div class="card_content">
+          <h5>Milestone 2: the purchase</h5>
+          <br>
+          <p>
+            We found an old building that felt just right 
+            for what we had in mind. Sure, there was a lot of work ahead - but we were determined to bring it to life.
+          </p>
         </div>
+      </div>
+    </div>
 
-        <div class="card p-4 milestone">
-          <div class="card_flex_box d-flex">
-            <div class="date_card text-center col-1">
-              <h1 class="fs-1">12</h1>
-              <p>August</p>
-            </div>
-            <div class="card_content">
-              <h5>Milestone 5: Opening Party</h5>
-              <br>
-              <p>
-                An unforgettable moment -almost 50 people showed up to our opening party. And not just for the barbecue and beer.
-                SCHALLPLATTE is finally up and running!
-              </p>
-            </div>
-          </div>
+    <div class="card p-4 milestone">
+      <div class="mobile_card_switcher">
+        <div class="date_card text-center col-1">
+          <h1 class="fs-1">12</h1>
+          <p>June</p>
         </div>
+        <div class="card_content">
+          <h5>Milestone 3: the hard work</h5>
+          <br>
+          <p>
+            There was a ton of work to do. First, we tackled the electrics - good music gear needs stable power, 
+            especially those AMPs that love to gobble up energy. Next came the bathrooms and the cafeteria. 
+            Albert was happy - finally, there was coffee at the center.
+          </p>
+        </div>
+      </div>
+    </div>
 
+    <div class="card p-4 milestone">
+      <div class="mobile_card_switcher">
+        <div class="date_card text-center col-1">
+          <h1 class="fs-1">25</h1>
+          <p>July</p>
+        </div>
+        <div class="card_content">
+          <h5>Milestone 4: the rehearsal rooms are ready!</h5>
+          <br>
+          <p>
+            That was definitely the most expensive and time-consuming part of the whole project. Which room should host 
+            which instruments? Honestly - until then, we'd never really thought about how pricey music gear actually is.
+            Not to mention the sound isolation, acoustic panels, paint, flooring... you name it.
+            But in the end? We pulled it off - and pretty well, too.
+          </p>
+        </div>
+      </div>
+    </div>
 
+    <div class="card p-4 milestone">
+      <div class="mobile_card_switcher">
+        <div class="date_card text-center col-1">
+          <h1 class="fs-1">12</h1>
+          <p>August</p>
+        </div>
+        <div class="card_content">
+          <h5>Milestone 5: Opening Party</h5>
+          <br>
+          <p>
+            An unforgettable moment -almost 50 people showed up to our opening party. And not just for the barbecue and beer.
+            SCHALLPLATTE is finally up and running!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Milestones 2025 ------------------------------------->
+    <br>
+    <h1 class="fs-1 ms-5">2025</h1>
+    <div class="card p-4 milestone">
+      <div class="mobile_card_switcher">
+        <div class="date_card text-center col-1">
+          <h1 class="fs-1">05</h1>
+          <p>July</p>
+        </div>
+        <div class="card_content">
+          <h5>Milestone 6: Our first rock festival</h5>
+          <br>
+          <p>
+            Attention: We host our first rock festival on the area next to our center! Feel free to apply as a musician!
+            There will be food and beverages, toilets etc! We'll keep you posted.
+          </p>
+        </div>
+      </div>
+    </div>
 
 
     </div>
