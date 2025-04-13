@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-  <link rel="stylesheet" href="{% static 'user/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'user/css/profile_edit.css' %}">
 {% endblock %}
 
 
@@ -19,50 +19,60 @@
       </div>
       <div class=" col-12 col-md-9 p-4">
         <div class="profile-head">
-          <div><h4>Profile</h4></div>
-          <a rel="stylesheet" href="" class="btn">
-            <i class="far fa-edit"></i>
+          <div><h4>Profile - edit</h4></div>
+          <a rel="stylesheet" href="{% url 'user:profile'%}" class="btn" id="btn-save">
+            <i class="far fa-save"></i>
           </a>
         </div>
         <br>
-        <div id="profile-box">
+        <form id="profile-form">
           <div class="row" id="username-container">
-            <div class="col-12 col-md-2 p-2"><strong>user name</strong></div> 
+            <div class="col-12 col-md-2 p-2"><strong>User name</strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="username">
               user10238
             </div>
           </div>
           <div class="row" id="firstname-container">
-            <div class="col-12 col-md-2 p-2"><strong>first name</strong></div> 
+            <div class="col-12 col-md-2 p-2"><strong>
+              <label for="form-firstname">First name</label>
+            </strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="firstname">
-              Werner
+              <input type="text" id="form-firstname" name="firstname" required>
             </div>
           </div>
           <div class="row" id="lastname-container">
-            <div class="col-12 col-md-2 p-2"><strong>last name</strong></div>
+            <div class="col-12 col-md-2 p-2"><strong>
+              <label for="form-lastname">Last name</label>
+            </strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="lastname">
-              Heisenberg
+              <input type="text" id="form-lastname" name="lastname" required>
             </div>
           </div>
           <div class="row" id="email-container">
-            <div class="col-12 col-md-2 p-2"><strong>email</strong></div> 
+            <div class="col-12 col-md-2 p-2"><strong>
+              <label for="form-email">Email</label>
+            </strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="email">
-              w.heisenberg@physics.de
+              <input type="email" id="form-email" name="email" required>
             </div>
           </div>
           <div class="row" id="instruments-container">
-            <div class="col-12 col-md-2 p-2"><strong>instruments</strong></div> 
+            <div class="col-12 col-md-2 p-2"><strong>
+              <label for="form-instruments">Instruments</label>
+            </strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="instruments">
-              Piano, Cello
+              <input type="text" id="form-instruments" name="instruments" required>
             </div>
           </div>
           <div class="row" id="about-user-container">
-            <div class="col-12 col-md-2 p-2"><strong>About Me</strong></div> 
+            <div class="col-12 col-md-2 p-2"><strong>
+              <label for="form-about">About Me</label>
+            </strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="about-user">
-              Music is my life - straight after quantum physics!
+              <textarea id="form-about" name="about" required></textarea>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
