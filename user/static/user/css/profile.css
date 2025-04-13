@@ -20,55 +20,23 @@ html[theme] main {
 }
 
 /* 02 General classes for all pages --------------------------------------------- */
-html[theme] .hero {
-    width: 100%;
-    max-width: 1200px;
-    margin-top: var(--nav-height);
+
+.profile_section {
+    padding: 10px 30px;
     background-color: var(--bg);
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-html[theme] .hero img {
-    height: 400px;
-    min-width: 100vw;
-    object-fit: cover;
-    filter: brightness(70%);
-}
-
-html[theme] .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    font-weight: bold;
-    line-height: 1.6;   
-    text-shadow: 2px 3px 6px #000000c8;
-    font-size: 2.5rem;
-    background-color: #000000c0;
-    padding: 60px 0;
-}
-
-html[theme] .hero-text h1 {
-    color: var(--act-bg);
-}
-
-
-.about_section {
-    padding: 30px;
-}
-
-.about_section img {
+.profile_section img {
     height: 190px;
     border-radius: 15px;   
 }
 
-html[theme] .milestone {
+.booking_section {
+    background-color: var(--bg2);
+    padding-top: 30px;
+}
+
+html[theme] .booking-item {
     max-width: 900px;
     margin-right: auto;
     margin-left: auto;
@@ -82,7 +50,7 @@ html[theme] .mobile_card_switcher {
     align-items: unset;
 }
 
-.date_card {
+html[theme] .date_card {
     height: 95px;
     width: 95px;
     background-color: var(--bg2);
@@ -96,14 +64,52 @@ html[theme] .card_content {
     margin-top: 70px;
 }
 
+#profile-box .row {
+    padding: 5px;
+}
 
+.bg {
+    background-color: #00000020;
+}
 
 /* 03 specific elements -------------------------------------------------------- */
+.profile-head {
+    display: flex;
+    align-items: center;
+    padding-left: 3px;
+}
+
+html[theme="dark"] .profile-head i {
+    color: black;
+}
+
+.profile-head div {
+    margin-right: auto;
+}
+
+html[theme] .profile-head h4 {
+    color: var(--link);
+}
+
+html[theme] #profile-photo   {
+    margin: auto;
+    justify-items: center;
+    padding: 50px;
+}
+
+html[theme] #profile-photo i {
+    color: var(--link);
+}
+
+#about-user {
+    min-height: 100px;
+}
+
 
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {
-    html[theme] .milestone {
+    html[theme] .booking-item {
         max-width: 900px;
         margin-right: auto;
         margin-left: auto;
@@ -118,15 +124,25 @@ html[theme] .card_content {
         
     }
     
-    .date_card {
+    html[theme] .date_card {
         height: 95px;
         width: 95px;
-        background-color: var(--bg2);
+        background-color: var(--nav-bg);
         padding-top: 7px;
         transform: translate(-40%,0);
         position: unset;
         left: unset;
     }
+
+    html[theme="light"] .date_card h1 {
+        color: white;
+    }
+
+    html[theme="light"] .date_card * {
+        color: white;
+    }
+
+
     
     html[theme] .card_content {
         margin-top: unset;

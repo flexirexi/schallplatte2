@@ -8,61 +8,77 @@
 
 {% block content %}
 <!-- index.html content starts here --------------------------------------------------->
-<!-- Team section and hero --------------------------------------------------->
-<main class="container">
-  <div class="hero">
-    <div class="hero-image">
-        <img src="{% static 'img/free/schallplatte01.jpg' %}" class="slide" alt="hero section  image: big rehearsal room">
-    </div>
-    <div class="hero-text">
-        <h1>Team</h1>
-    </div>
-  </div>
-  <section class="about_section">
+<!-- PROFILE DATA  --------------------------------------------------->
+<main class="container-fluid">
+  <section class="profile_section">
     <div class="row ">
-      <div class="card col-12 col-md-4 ms-auto me-auto mb-3 mt-3 p-4">
-        <h4>"Max Planck"</h4>
-        <br>
-        <p>
-          Co-Founder of the music center. He plays Piano and the organ since he can think. 
-          While studying physics, he never stopped composing sonatas and other pieces for the piano. After a while, he met 
-          somebody who shares the same interest. So, the Idea of SCHALLPLATTE was born. Now, Max manages all events of this center 
-          as well as our new project, the online forum.
-        </p>
+      <div id="profile-photo" class="col-12 col-md-3 p-4">
+        <div class="text-center">
+          <i class="far fa-user fa-lg fa-7x "></i>
+        </div>
       </div>
-      <div class="card col-12 col-md-4 ms-auto me-auto mb-4 mt-3 p-4">
-        <h4>"Albert Einstein"</h4>
+      <div class=" col-12 col-md-9 p-4">
+        <div class="profile-head">
+          <div><h4>Profile</h4></div>
+          <a rel="stylesheet" href="" class="btn">
+            <i class="far fa-edit"></i>
+          </a>
+        </div>
         <br>
-        <p>
-          Co-Founder of the music center. Just like Max, he plays every day. However, the instrument that stole his heart 
-          is the violine. He uses to say that he would have become a musician if he wasn't a physicist. Albert takes care of
-          all the business related work. Also, he is giving violine lessons. 
-        </p>
+        <div id="profile-box">
+          <div class="row" id="username-container">
+            <div class="col-12 col-md-2 p-2"><strong>user name</strong></div> 
+            <div class="col-12 col-md-7 p-2 bg" id="username">
+              user10238
+            </div>
+          </div>
+          <div class="row" id="firstname-container">
+            <div class="col-12 col-md-2 p-2"><strong>first name</strong></div> 
+            <div class="col-12 col-md-7 p-2 bg" id="firstname">
+              Werner
+            </div>
+          </div>
+          <div class="row" id="lastname-container">
+            <div class="col-12 col-md-2 p-2"><strong>last name</strong></div>
+            <div class="col-12 col-md-7 p-2 bg" id="lastname">
+              Heisenberg
+            </div>
+          </div>
+          <div class="row" id="email-container">
+            <div class="col-12 col-md-2 p-2"><strong>email</strong></div> 
+            <div class="col-12 col-md-7 p-2 bg" id="email">
+              w.heisenberg@physics.de
+            </div>
+          </div>
+          <div class="row" id="instruments-container">
+            <div class="col-12 col-md-2 p-2"><strong>instruments</strong></div> 
+            <div class="col-12 col-md-7 p-2 bg" id="instruments">
+              Piano, Cello
+            </div>
+          </div>
+          <div class="row" id="about-user-container">
+            <div class="col-12 col-md-2 p-2"><strong>About Me</strong></div> 
+            <div class="col-12 col-md-7 p-2 bg" id="about-user">
+              Music is my life - straight after quantum physics!
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- History Section and hero --------------------------------------------->
-  <div class="hero">
-    <div class="hero-image">
-        <img src="{% static 'img/other/my_image.png' %}" class="slide" alt="hero section  image: big rehearsal room">
-    </div>
-    <div class="hero-text">
-        <h1>History</h1>
-    </div>
-  </div>
-
-  <section class="about_section">
-    <!-- Milestones 2024 ---------------------------------------->
-    <h1 class="fs-1 ms-5">2024</h1>
-    <div class="card p-4 milestone">
+  
+    
+  <section class="booking_section">
+    <!-- BOOKED ITEMS SECTION  ---------------------------------------->
+     <h1 class="ms-5 mb-5 mt-3">Booked rooms: </h1>
+    <div class="card p-4 booking-item">
       <div class="mobile_card_switcher">
         <div class="date_card text-center col-1">
-          <h1 class="fs-1">09</h1>
+          <h1 class="fs-1 white">09</h1>
           <p>April</p>
         </div>
         <div class="card_content">
-          <h5>Milestone 1: the idea</h5>
+          <h5>booking-item 1: the idea</h5>
           <br>
           <p>
             Albert and Max one day met for a coffee talking about music. The idea emerged that they wanted to build place
@@ -73,14 +89,14 @@
       </div>
     </div>
 
-    <div class="card p-4 milestone">
+    <div class="card p-4 booking-item">
       <div class="mobile_card_switcher">
         <div class="date_card text-center col-1">
-          <h1 class="fs-1">30</h1>
+          <h1 class="fs-1 ">30</h1>
           <p>May</p>
         </div>
         <div class="card_content">
-          <h5>Milestone 2: the purchase</h5>
+          <h5>booking-item 2: the purchase</h5>
           <br>
           <p>
             We found an old building that felt just right 
@@ -90,14 +106,14 @@
       </div>
     </div>
 
-    <div class="card p-4 milestone">
+    <div class="card p-4 booking-item">
       <div class="mobile_card_switcher">
         <div class="date_card text-center col-1">
           <h1 class="fs-1">12</h1>
           <p>June</p>
         </div>
         <div class="card_content">
-          <h5>Milestone 3: the hard work</h5>
+          <h5>booking-item 3: the hard work</h5>
           <br>
           <p>
             There was a ton of work to do. First, we tackled the electrics - good music gear needs stable power, 
@@ -108,14 +124,14 @@
       </div>
     </div>
 
-    <div class="card p-4 milestone">
+    <div class="card p-4 booking-item">
       <div class="mobile_card_switcher">
         <div class="date_card text-center col-1">
           <h1 class="fs-1">25</h1>
           <p>July</p>
         </div>
         <div class="card_content">
-          <h5>Milestone 4: the rehearsal rooms are ready!</h5>
+          <h5>booking-item 4: the rehearsal rooms are ready!</h5>
           <br>
           <p>
             That was definitely the most expensive and time-consuming part of the whole project. Which room should host 
@@ -127,14 +143,14 @@
       </div>
     </div>
 
-    <div class="card p-4 milestone">
+    <div class="card p-4 booking-item">
       <div class="mobile_card_switcher">
         <div class="date_card text-center col-1">
           <h1 class="fs-1">12</h1>
           <p>August</p>
         </div>
         <div class="card_content">
-          <h5>Milestone 5: Opening Party</h5>
+          <h5>booking-item 5: Opening Party</h5>
           <br>
           <p>
             An unforgettable moment -almost 50 people showed up to our opening party. And not just for the barbecue and beer.
@@ -144,17 +160,17 @@
       </div>
     </div>
 
-    <!-- Milestones 2025 ------------------------------------->
+    <!-- booking-items 2025 ------------------------------------->
     <br>
-    <h1 class="fs-1 ms-5">2025</h1>
-    <div class="card p-4 milestone">
+
+    <div class="card p-4 booking-item">
       <div class="mobile_card_switcher">
         <div class="date_card text-center col-1">
           <h1 class="fs-1">05</h1>
           <p>July</p>
         </div>
         <div class="card_content">
-          <h5>Milestone 6: Our first rock festival</h5>
+          <h5>booking-item 6: Our first rock festival</h5>
           <br>
           <p>
             Attention: We host our first rock festival on the area next to our center! Feel free to apply as a musician!
