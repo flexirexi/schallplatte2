@@ -133,6 +133,11 @@ html[theme] .navbar-toggler:active {
     background-color: #ffffff50;
 }
 
+html[theme] .dropdown-menu {
+    background-color: #000000d0;
+}
+
+
 html[theme] .hero span {
     color: white;
 }
@@ -159,12 +164,6 @@ html[theme] .container {
 
 
 /* 03 specific elements -------------------------------------------------------- */
-#btLoginDesktop {
-    margin-right: 20px;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-
 #theme-toggle {
     background-color: #ffffff20;
     border: var(--act-text);
@@ -180,6 +179,10 @@ html[theme] .container {
 #theme-toggle:hover,
 #language-toggle:hover {
     background-color: #ffffff50;
+}
+
+html[theme] #logged-in-dropdown a:hover {
+    background-color: #000000a0;
 }
 
 /* MEDIA QUERIES --------------------------------------------------------------- */

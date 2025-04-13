@@ -25,14 +25,13 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="{% static 'img/logos/gold_vinyl.webp' %}" alt="Logo" height="50" class="me-2">
-            </a>
-            <a id="btnLoginMobile" href="{% url 'account_login' %}" class="btn nav-contact-btn ms-auto me-3">Login</a>
+        <div class="container position-relative" style="min-height: var(--nav-height);">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <a class="navbar-brand d-flex position-absolute top-0 start-50 translate-middle-x mt-2" href="#">
+                <img src="{% static 'img/logos/gold_vinyl.webp' %}" alt="Logo" height="45" class="me-2">
+            </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-3">
                     <li class="nav-item"><a class="nav-link" href="{% url 'home' %}" style="color: #48C9B0;" >Home</a></li>
@@ -42,9 +41,6 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a id="btLoginDesktop" href="{% url 'account_login' %}" class="btn btn-outline-light nav-contact-btn" >Login</a>
-                    </li>
-                    <li class="nav-item">
                         <button class="btn btn-outline-light" id="theme-toggle" >
                             <i class="fas fa-sun" style="color: #b7b7b7;"></i> <!-- Standard Icon für Dark Mode -->
                         </button>
@@ -52,30 +48,39 @@
                     <li class="nav-item">
                         <button class="btn btn-outline-light" id="language-toggle" style="color: #b7b7b7;">DE</button>
                     </li>
+                    <li class="nav-item  d-flex align-items-center ms-3">
+                        
+                    </li>
                 </ul>
             </div>
+            
+            {% if user.is_authenticated %}
+            <div  class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle  {% if request.path == logout_url %}active{% endif %}" 
+                  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hello
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" id="logged-in-dropdown">
+                    <li><a class="dropdown-item" href="{% url 'user:profile' %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Notifications</a></li>
+                    <li>
+                        <a class="dropdown-item {% if request.path == logout_url %}active{% endif %}" 
+                            aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            {% else %}
+            <a id="btLoginDesktop" href="{% url 'account_login' %}" 
+                class="btn btn-outline-light nav-contact-btn {% if request.path == login_url %}active{% endif %}" >Login!</a>
+            {% endif %}
+            
+
         </div>
     </nav>
 
-    {% if user.is_authenticated %}
-    <li class="nav-item mt-6 p-5">
-        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-    </li>
-    {% else %}
-    <li class="nav-item">
-        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-            href="{% url 'account_signup' %}">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-    </li>
-    {% endif %}
-
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-
-
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
 
     <!-- Footer -->
     <footer>

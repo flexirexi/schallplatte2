@@ -16,7 +16,7 @@ html[theme] main {
     background-color: var(--bg);
     padding: 0;
     justify-content: center;
-    margin-top: 0;
+    margin-top: var(--nav-height);
 }
 
 /* 02 General classes for all pages --------------------------------------------- */
@@ -91,6 +91,10 @@ html[theme="dark"] .profile-head i {
     color: black;
 }
 
+html[theme] .profile-head a:hover i {
+    color: var(--act-bg);
+}
+
 .profile-head div {
     margin-right: auto;
 }
@@ -110,6 +114,10 @@ html[theme] #profile-photo i {
     background-color: #00000020;
     padding: 50px 40px;
     border-radius: 90px;
+}
+
+html[theme] #profile-photo i:hover {
+    color: #ffffffa0;
 }
 
 #about-user {
