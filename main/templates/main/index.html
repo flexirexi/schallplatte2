@@ -34,7 +34,13 @@
             Sooner or later, you'll meet fellow artists here. Just register and book your room!
             <br><br>
         </p>
-        <button  class="btn btn-primary" id="btn_register">Register</button>
+        {% if user.is_authenticated %}
+        <a href="#" class="btn btn-primary">Book now</a>
+        {% else %}
+        <a href="{% url 'account_login' %}" 
+            class="btn btn-outline-light nav-contact-btn {% if request.path == login_url %}active{% endif %}" >Login!</a>
+        {% endif %}
+        
     </section>
     <hr>
 
@@ -42,7 +48,7 @@
     <section class="index_section">
         <h2>Our Rooms</h2>
         
-        <div class="container mt-0">
+        <div class="container mt-5">
             <div class="row g-4"> <!-- g-3 = ca. 15px -->
                 <div class="col-12 col-md-4 d-flex">
                     <div class="card p-4 h-100">
@@ -93,7 +99,12 @@
             </div>
         </div>
         
-        <button class="btn btn-primary mt-5" id="btn_book_room">Book now</button>
+        {% if user.is_authenticated %}
+        <a href="#" class="btn btn-primary mt-5">Book now</a>
+        {% else %}
+        <a href="{% url 'account_login' %}" 
+            class="btn btn-outline-light nav-contact-btn mt-5 {% if request.path == login_url %}active{% endif %}" >Login!</a>
+        {% endif %}
     </section>
     <hr>
 
@@ -111,7 +122,7 @@
             Sooner or later, you’ll meet fellow artists here. Just register and book your room!
             
         </p>
-        <button class="btn btn-primary mt-5" id="btn_book_room">Tell me more</button>
+        <a href="{% url 'forum'%}" class="btn btn-primary mt-5" id="btn_book_room">Tell me more</a>
     </div>
 </main>
 <!-- index.html content ends here --------------------------------------------------------------->
