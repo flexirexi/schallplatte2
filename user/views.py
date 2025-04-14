@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .form import EditProfileForm
 from .models import Profile
-from rooms.models import RoomCalendar
+from rooms.services import delete_booking
 
 
 # Create your views here.
@@ -40,3 +40,9 @@ def profile_edit(request):
 
 def notifications(request):
     return render(request, 'user/notifications.html')
+
+
+def booking_delete_view(request, id):
+    if request.method == 'POST':
+        delete_booking(id=id, user=request.user)
+    return redirect('user:profile')

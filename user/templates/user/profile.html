@@ -91,26 +91,51 @@
                 </p>
               </div>
               
-                <div class="mobile_card_switcher_reverse">
-                  <button class="btn ms-auto ms-md-0 p-1 fs-6 me-4">modify</button>
-                  <button class="btn ms-5 ms-md-0 bg-danger border-none me-4 mt-3">Cancel</button>
-                </div>
-              
+              <div class="mobile_card_switcher_reverse">
+                <button class="btn ms-auto ms-md-0 p-1 fs-6 me-4">modify</button>
+                <button type="button" class="btn ms-5 ms-md-0 bg-danger border-none me-4 mt-3"
+                  data-bs-toggle="modal" data-bs-target="#confirmModal-{{ booking.id }}">
+                  Cancel
+                </button>
+              </div>
+
             </div>
           </div> 
+        </li>
+        {% endfor %}
+      <!-- </ul> -->
+      {% else %}
+      <p>Du hast aktuell keine Buchungen.</p>
+      {% endif %}
+      
+      <div class="text-center mt-5 mb-4"><a id="booking_section_btn" href="{% url 'rooms:calendar' %}" class="btn">Book now</a></div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="confirmModal-{{ booking.id }}" tabindex="-1" aria-labelledby="modalLabel-{{ booking.id }}" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
 
-           <!-- <strong>Raum:</strong> {{ booking.room.name }} <br>
-           <strong>Von:</strong> {{ booking.start_daytime|date:"d.m.Y H:i" }}<br>
-           <strong>Bis:</strong> {{ booking.end_daytime|date:"d.m.Y H:i" }} -->
-         </li>
-       {% endfor %}
-     <!-- </ul> -->
-    {% else %}
-     <p>Du hast aktuell keine Buchungen.</p>
-    {% endif %}
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalLabel-{{ booking.id }}">Buchung wirklich löschen?</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-    <div class="text-center mt-5 mb-4"><a id="booking_section_btn" href="{% url 'rooms:calendar' %}" class="btn">Book now</a></div>
-    
+            <div class="modal-body">
+              <p>Diese Buchung vom <strong>{{ booking.start_daytime|date:"d.m.Y H:i" }}</strong> bis <strong>{{ booking.end_daytime|date:"d.m.Y H:i" }}</strong> wird gelöscht.</p>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+
+              <form method="POST" action="{% url 'user:delete_booking' booking.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Löschen bestätigen</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
   </section>
 </main>
 <!-- index.html content ends here ----------------------------------------------------->
