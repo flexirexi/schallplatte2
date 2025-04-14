@@ -11,9 +11,9 @@ def login(request):
 def profile(request):
     user = request.user
     profile = Profile.objects.get(user=user)
-    
+
     return render(request, 'user/profile.html', {
-        'user': user,       
+        'user': user,
         'profile': profile
     })
 
