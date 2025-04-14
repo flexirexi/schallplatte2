@@ -36,3 +36,7 @@ def profile_edit(request):
         form = EditProfileForm(instance=profile, user=user)
 
     return render(request, 'user/profile_edit.html', {'form': form})
+
+
+def notifications(request):
+    return render(request, 'user/notifications.html')
