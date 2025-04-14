@@ -9,13 +9,18 @@ def login(request):
 
 
 def profile(request):
-    return render(request, 'user/profile.html')
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    
+    return render(request, 'user/profile.html', {
+        'user': user,       
+        'profile': profile
+    })
 
 
 def profile_edit(request):
     user = request.user
 
-    # 💡 Verhindert Crash, wenn kein Profil da ist
     profile, created = Profile.objects.get_or_create(user=user)
 
     if request.method == 'POST':

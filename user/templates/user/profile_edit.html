@@ -34,22 +34,22 @@
             </div>
           {% endif %}
 
-          <div class="d-flex justify-content-end mb-3">
+          <div class="custom-flex justify-content-end mb-3">
             <h4 class="me-auto profile-head">Profile - edit</h4>
             <a href="{% url 'user:profile' %}" class="btn me-4" id="btn-cancel">Cancel</a>
             <button type="submit" class="btn " id="btn-save" >Save</button>
           </div>
           <div class="row" id="username-container">
             <div class="col-12 col-md-2 p-2"><strong>User name</strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="username">
-              user10238
+            <div class="col-12 col-md-7 p-2" id="username">
+              {{ form.username }}
             </div>
           </div>
           <div class="row" id="firstname-container">
             <div class="col-12 col-md-2 p-2"><strong>
               <label for="form-firstname">First name</label>
             </strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="firstname">
+            <div class="col-12 col-md-7 p-2" id="firstname">
               {{ form.firstname }}
             </div>
           </div>
@@ -57,7 +57,7 @@
             <div class="col-12 col-md-2 p-2"><strong>
               <label for="form-lastname">Last name</label>
             </strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="lastname">
+            <div class="col-12 col-md-7 p-2" id="lastname">
               {{ form.lastname }}
             </div>
           </div>
@@ -65,7 +65,7 @@
             <div class="col-12 col-md-2 p-2"><strong>
               <label for="form-email">Email</label>
             </strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="email">
+            <div class="col-12 col-md-7 p-2" id="email">
               {{ form.email }}
             </div>
           </div>
@@ -73,7 +73,7 @@
             <div class="col-12 col-md-2 p-2"><strong>
               <label for="form-instruments">Instruments</label>
             </strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="instruments">
+            <div class="col-12 col-md-7 p-2 " id="instruments">
               {{ form.instruments }}
             </div>
           </div>
@@ -81,7 +81,7 @@
             <div class="col-12 col-md-2 p-2"><strong>
               <label for="form-about">About Me</label>
             </strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="about-user">
+            <div class="col-12 col-md-7 p-2 " id="about-user">
               {{ form.about }}
             </div>
           </div>

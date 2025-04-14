@@ -29,37 +29,37 @@
           <div class="row" id="username-container">
             <div class="col-12 col-md-2 p-2"><strong>user name</strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="username">
-              user10238
+              {{ user.username  }}
             </div>
           </div>
           <div class="row" id="firstname-container">
             <div class="col-12 col-md-2 p-2"><strong>first name</strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="firstname">
-              Werner
+              {{ profile.firstname }}
             </div>
           </div>
           <div class="row" id="lastname-container">
             <div class="col-12 col-md-2 p-2"><strong>last name</strong></div>
             <div class="col-12 col-md-7 p-2 bg" id="lastname">
-              Heisenberg
+              {{ profile.lastname }}
             </div>
           </div>
           <div class="row" id="email-container">
             <div class="col-12 col-md-2 p-2"><strong>email</strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="email">
-              w.heisenberg@physics.de
+              {{ user.email }}
             </div>
           </div>
           <div class="row" id="instruments-container">
             <div class="col-12 col-md-2 p-2"><strong>instruments</strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="instruments">
-              Piano, Cello
+              {{ profile.instruments }}
             </div>
           </div>
           <div class="row" id="about-user-container">
             <div class="col-12 col-md-2 p-2"><strong>About Me</strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="about-user">
-              Music is my life - straight after quantum physics!
+              {{ profile.about }}
             </div>
           </div>
         </div>

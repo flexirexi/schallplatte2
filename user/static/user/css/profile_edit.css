@@ -30,6 +30,9 @@ html[theme] input {
 html[theme] textarea {
     height: 100%;
     width: 100%;
+    background-color: var(--bg2);
+    border: 1px solid currentColor;
+    border-radius: 5px;
 }
 
 /* 02 General classes for all pages --------------------------------------------- */
@@ -91,6 +94,10 @@ html[theme] .card_content {
 
 .bg {
     background-color: #00000020;
+}
+
+.custom-flex {
+    display: unset;
 }
 
 /* 03 specific elements -------------------------------------------------------- */
@@ -202,9 +209,11 @@ html[theme] #booking_section_btn {
         color: white;
     }
 
-
-    
     html[theme] .card_content {
         margin-top: unset;
+    }
+
+    .custom-flex {
+        display: flex;
     }
 }
