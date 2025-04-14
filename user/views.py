@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .form import EditProfileForm
 from .models import Profile
+from rooms.models import RoomCalendar
 
 
 # Create your views here.
@@ -12,9 +13,12 @@ def profile(request):
     user = request.user
     profile = Profile.objects.get(user=user)
 
+    bookings = user.user_bookings.all().order_by('-start_daytime')
+
     return render(request, 'user/profile.html', {
         'user': user,
-        'profile': profile
+        'profile': profile,
+        'bookings': bookings,
     })
 
 
