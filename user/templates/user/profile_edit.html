@@ -36,8 +36,9 @@
 
           <div class="d-flex justify-content-end mb-3">
             <h4 class="me-auto profile-head">Profile - edit</h4>
+            <a href="{% url 'user:profile' %}" class="btn me-4" id="btn-cancel">Cancel</a>
+            <button type="submit" class="btn " id="btn-save" >Save</button>
           </div>
-          <button type="submit" class="btn " >Speichern</button>
           <div class="row" id="username-container">
             <div class="col-12 col-md-2 p-2"><strong>User name</strong></div> 
             <div class="col-12 col-md-7 p-2 bg" id="username">

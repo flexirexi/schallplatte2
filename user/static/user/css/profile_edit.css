@@ -116,9 +116,21 @@ html[theme] .profile-head h4 {
     color: var(--schallplatte);
 }
 
+#btn-cancel {
+    background-color: black;
+    color: var(--act-bg);
+}
+
+#btn-cancel:hover {
+    background-color: var(--act-bg);
+    color: black;
+}
+
 #btn-save {
     background-color: var(--accent); 
     border: none;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #btn-save:hover {
