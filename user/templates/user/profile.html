@@ -70,132 +70,39 @@
     
   <section class="booking_section">
     <!-- BOOKED ITEMS SECTION  ---------------------------------------->
-    <h4>Deine Buchungen:</h4>
-
-    {% if bookings %}
-      <ul class="list-group">
-        {% for booking in bookings %}
-          <li class="list-group-item">
-            <strong>Raum:</strong> {{ booking.room.name }} <br>
-            <strong>Von:</strong> {{ booking.start_daytime|date:"d.m.Y H:i" }}<br>
-            <strong>Bis:</strong> {{ booking.end_daytime|date:"d.m.Y H:i" }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>Du hast aktuell keine Buchungen.</p>
-    {% endif %}
-    
      <h1 class="ms-5 mb-5 mt-3">Booked rooms: </h1>
-    <div class="card p-4 booking-item">
-      <div class="mobile_card_switcher">
-        <div class="date_card text-center col-1">
-          <h1 class="fs-1 white">09</h1>
-          <p>April</p>
-        </div>
-        <div class="card_content">
-          <h5>booking-item 1: the idea</h5>
-          <br>
-          <p>
-            Albert and Max one day met for a coffee talking about music. The idea emerged that they wanted to build place
-            where musicians can meet up and share their interest and devotion for music. Practicing instruments, meet the 
-            peer group. Share excitement for own compositions. They decided to make the first move.
-          </p>
-        </div>
-      </div>
-    </div>
+     {% if bookings %}
+     <!-- <ul class="list-group"> -->
+       {% for booking in bookings %}
+         <li class="list-group-item">
+          <div class="card p-4 booking-item">
+            <div class="mobile_card_switcher">
+              <div class="date_card text-center col-1">
+                <h1 class="fs-1 white">{{ booking.start_daytime|date:"d" }}</h1>
+                <p>{{ booking.start_daytime|date:"F" }}</p>
+              </div>
+              <div class="card_content">
+                <h5>{{ booking.room.name }}</h5>
+                <br>
+                <p>
+                  <strong>from</strong> {{ booking.start_daytime|date:"d.m.Y " }} <span class="time-color">{{ booking.start_daytime|date:"H:i" }}</span> 
+                  <br>
+                  <strong>to:</strong> {{ booking.end_daytime|date:"d.m.Y " }} <span class="time-color">{{ booking.end_daytime|date:"H:i" }}</span> 
+                </p>
+              </div>
+            </div>
+          </div> 
 
-    <div class="card p-4 booking-item">
-      <div class="mobile_card_switcher">
-        <div class="date_card text-center col-1">
-          <h1 class="fs-1 ">30</h1>
-          <p>May</p>
-        </div>
-        <div class="card_content">
-          <h5>booking-item 2: the purchase</h5>
-          <br>
-          <p>
-            We found an old building that felt just right 
-            for what we had in mind. Sure, there was a lot of work ahead - but we were determined to bring it to life.
-          </p>
-        </div>
-      </div>
-    </div>
+           <!-- <strong>Raum:</strong> {{ booking.room.name }} <br>
+           <strong>Von:</strong> {{ booking.start_daytime|date:"d.m.Y H:i" }}<br>
+           <strong>Bis:</strong> {{ booking.end_daytime|date:"d.m.Y H:i" }} -->
+         </li>
+       {% endfor %}
+     <!-- </ul> -->
+    {% else %}
+     <p>Du hast aktuell keine Buchungen.</p>
+    {% endif %}
 
-    <div class="card p-4 booking-item">
-      <div class="mobile_card_switcher">
-        <div class="date_card text-center col-1">
-          <h1 class="fs-1">12</h1>
-          <p>June</p>
-        </div>
-        <div class="card_content">
-          <h5>booking-item 3: the hard work</h5>
-          <br>
-          <p>
-            There was a ton of work to do. First, we tackled the electrics - good music gear needs stable power, 
-            especially those AMPs that love to gobble up energy. Next came the bathrooms and the cafeteria. 
-            Albert was happy - finally, there was coffee at the center.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card p-4 booking-item">
-      <div class="mobile_card_switcher">
-        <div class="date_card text-center col-1">
-          <h1 class="fs-1">25</h1>
-          <p>July</p>
-        </div>
-        <div class="card_content">
-          <h5>booking-item 4: the rehearsal rooms are ready!</h5>
-          <br>
-          <p>
-            That was definitely the most expensive and time-consuming part of the whole project. Which room should host 
-            which instruments? Honestly - until then, we'd never really thought about how pricey music gear actually is.
-            Not to mention the sound isolation, acoustic panels, paint, flooring... you name it.
-            But in the end? We pulled it off - and pretty well, too.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card p-4 booking-item">
-      <div class="mobile_card_switcher">
-        <div class="date_card text-center col-1">
-          <h1 class="fs-1">12</h1>
-          <p>August</p>
-        </div>
-        <div class="card_content">
-          <h5>booking-item 5: Opening Party</h5>
-          <br>
-          <p>
-            An unforgettable moment -almost 50 people showed up to our opening party. And not just for the barbecue and beer.
-            SCHALLPLATTE is finally up and running!
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- booking-items 2025 ------------------------------------->
-    <br>
-
-    <div class="card p-4 booking-item">
-      <div class="mobile_card_switcher">
-        <div class="date_card text-center col-1">
-          <h1 class="fs-1">05</h1>
-          <p>July</p>
-        </div>
-        <div class="card_content">
-          <h5>booking-item 6: Our first rock festival</h5>
-          <br>
-          <p>
-            Attention: We host our first rock festival on the area next to our center! Feel free to apply as a musician!
-            There will be food and beverages, toilets etc! We'll keep you posted.
-          </p>
-        </div>
-      </div>
-    </div>
-    
     <div class="text-center mt-5 mb-4"><a id="booking_section_btn" href="#" class="btn">book a room</a></div>
 
   </section>
