@@ -34,12 +34,11 @@ html[theme] main {
 .booking_section {
     background-color: var(--bg2);
     padding: 30px 0;
-    
 }
 
 html[theme] .booking-item {
     width: 95%;
-    max-width: 300px;
+    max-width: 350px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 30px;
@@ -50,6 +49,16 @@ html[theme] .mobile_card_switcher {
     justify-items: center;
     position:relative;
     align-items: unset;
+}
+
+
+
+html[theme] .mobile_card_switcher_reverse {
+    display: flex;
+    justify-items: flex-end;
+    position:unset;
+    align-items: flex-end;
+    width: 100%;
 }
 
 html[theme] .date_card {
@@ -78,6 +87,15 @@ html[theme] .card_content {
 
 .bg {
     background-color: #00000020;
+}
+
+html[theme] .border-none {
+    border: none;
+}
+
+html[theme] .border-none:hover {
+    border: none;
+    color: var(--schallplatte);
 }
 
 /* 03 specific elements -------------------------------------------------------- */
@@ -147,8 +165,19 @@ html[theme] .time-color {
         display: flex;
         justify-items: unset;
         position:unset;
-        align-items: center;
-        
+        align-items: center;   
+    }
+
+    html[theme] .mobile_card_switcher_reverse {
+        display: flex;
+        flex-direction: column;  
+        gap: 5px;           
+        align-items: flex-start; 
+    }
+
+    html[theme] .mobile_card_switcher_reverse button {
+        display: block;
+        min-width: 100px;      
     }
     
     html[theme] .date_card {

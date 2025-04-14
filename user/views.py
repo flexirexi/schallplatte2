@@ -13,7 +13,7 @@ def profile(request):
     user = request.user
     profile = Profile.objects.get(user=user)
 
-    bookings = user.user_bookings.all().order_by('-start_daytime')
+    bookings = user.user_bookings.all().order_by('start_daytime')
 
     return render(request, 'user/profile.html', {
         'user': user,
