@@ -7,12 +7,60 @@
 
 
 {% block content %}
-<!-- calendar content starts here ------------------------------------------------------------->
+<!-- calendar content starts here (now it get's tricky ;)) ------------------------------------------------------------->
 
 
-<main class="container ">
-    <!-- The calendar interface --------------->
-
-</main>
+<div class="container-fluid p-0">
+    <div class="container-fluid-content d-flex flex-column flex-md-row">
+  
+      <!-- Left desktop filter drawer (in mobile-mode: hidden) -->
+      <aside id="filter-panel" class="d-none d-md-block col-md-3 p-3 m-1">
+        <!-- filters here -->
+        <h5>Filter</h5>
+      </aside>
+  
+      <!-- Mobile filter Button (mobile only) -->
+      <button class="btn btn-outline-secondary d-md-none m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilterDrawer" aria-controls="mobileFilterDrawer">
+        Filter
+      </button>
+  
+      <!-- Mobile Filter Drawer (in desktop mode: hidden)-->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilterDrawer" aria-labelledby="mobileFilterDrawerLabel">
+        <div class="offcanvas-header">
+          <h5 id="mobileFilterDrawerLabel">Filter</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- same filters here, just for mobile version -->
+          <p>Filteroptionen hier...</p>
+        </div>
+      </div>
+  
+      <!-- Main calendar interface -->
+      <main class="flex-fill p-3 mt-1 mb-md-1" id="calendar-interface">
+        <!-- the ACTUAL calendar interface -->
+        <h5>Kalender-Ansicht</h5>
+      </main>
+  
+      <!-- Right SlideView (Desktop fixed right panel, Mobile Slide-Up) -->
+      <!-- Desktop -->
+      <aside id="slot-detail-panel" class="d-none d-md-block col-md-3 p-3 m-1">
+        <h5>Details for the slot</h5>
+      </aside>
+  
+      <!-- Mobile Slide-Up (lunzt ~50px rein) -->
+      <div id="mobile-slideup" class="d-md-none position-fixed bottom-0 start-0 w-100 border-top shadow slideup-container" style="transform: translateY(60%); transition: transform 0.3s;">
+        <div class="handle text-center py-2 text-white" style="border-radius: 8px 8px 0 0;">
+            <i class="fas fa-grip-lines"></i> 
+            Slot-Details
+        </div>
+        <div class="p-3">
+          <h6>details for the slot</h6>
+          <p>stuff</p>
+        </div>
+      </div>
+  
+    </div>
+  </div>
 <!-- calendar content ends here --------------------------------------------------------------->
 {% endblock %}

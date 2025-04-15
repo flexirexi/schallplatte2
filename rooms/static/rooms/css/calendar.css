@@ -10,12 +10,21 @@ Bootstrap is used here -> in order to overwrite, use:
 @import url("/static/css/layout.css");
 
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
+html[theme] .container-fluid {
+    margin-top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+}
 
-html[theme] main {
+html[theme] .container-fluid-content {
+    height: 100%; 
+    overflow: hidden;
+}
+
+html[theme] main,
+html[theme] aside {
     background-color: var(--bg);
-    padding: 0 15px;
-    justify-content: center;
     margin-top: 0;
+    border-radius: 10px;
 }
 
 /* 02 General classes for all pages --------------------------------------------- */
