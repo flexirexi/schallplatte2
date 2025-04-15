@@ -45,10 +45,11 @@ function calendarUX(wrapper) {
                 const hour = parseInt(cell.dataset.hour);
                 const half = parseInt(cell.dataset.half);
                 const currentValue = hour * 2 + half;
+                const blocked = cell.dataset.blocked;
 
                 const from = Math.min(selectionStartValue, currentValue);
                 const to = Math.max(selectionStartValue, currentValue);
-                // console.log("--------  ENTER --------");
+                console.log("--------  ENTER --------");
                 // console.log("from: ",from);
                 // console.log("to: ", to);
                 // console.log("hour: ", hour);
@@ -57,6 +58,7 @@ function calendarUX(wrapper) {
                 // console.log("selected room: ", selectedRoom);
                 // console.log("---------------------------");
                 // console.log(" ");
+                console.log("Blocked:   ", blocked);
 
                 document.querySelectorAll(`.calendar-cell[data-room="${selectedRoom}"]`).forEach(c => {
                     const h = parseInt(c.dataset.hour);
