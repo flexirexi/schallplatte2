@@ -10,6 +10,10 @@ Bootstrap is used here -> in order to overwrite, use:
 @import url("/static/css/layout.css");
 
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
+:root {
+    --rooms-count: 9;
+}
+
 html[theme] .container-fluid {
     margin-top: var(--nav-height);
     height: calc(100vh - var(--nav-height));
@@ -96,10 +100,11 @@ html[theme] .calendar-wrapper {
 
 html[theme] .calendar-grid {
     display: grid;
-    grid-template-columns: 40px repeat(8, minmax(80px, 1fr));
+    grid-template-columns: 40px repeat(var(--rooms-count), minmax(90px, 1fr));
     grid-auto-rows: 50px;
     position: relative;
     min-width: fit-content;
+    user-select: none;
 }
 
 /* Headings */
@@ -113,7 +118,15 @@ html[theme] .calendar-header {
     position: sticky;
     top: 0;
     z-index: 1;
-    color: white;
+    font-size: 13px;
+}
+
+html[theme="dark"] .calendar-header {
+    color: var(--schallplatte);
+}
+
+html[theme="light"] .calendar-header {
+    color: var(--accent);
 }
 
 html[theme] .calendar-header.time-label {
@@ -143,6 +156,11 @@ html[theme] .calendar-cell {
     background-color: var(--bg2);
     border-bottom: 1px solid #dee2e6;
     border-right: 1px solid #dee2e6;
+}
+
+html[theme] .calendar-cell:hover {
+    background-color: #00000080;
+    cursor: pointer;
 }
 
 html[theme] .calendar-cell.half-hour {

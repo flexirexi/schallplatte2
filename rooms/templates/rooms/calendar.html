@@ -41,15 +41,18 @@
         <!-- the ACTUAL calendar interface -->
         <form action="" method="get" class="d-block ms-auto me-auto" id="dateForm">
             <input type="date" id="myDatePicker" name="selected_date" class="btn d-block ms-auto me-auto" 
-                value="{{ cursor.date|date:'Y-m-d' }}" >
+                value="{{ cursor.date|date:'Y-m-d' }}" min="{{ today|date:'Y-m-d' }}">
         </form>
         <!-- gridview per half an hour from 00:00 to 00:00 in one day, top to bottom-->
         <div class="calendar-wrapper">
             <div class="calendar-grid">
                 <!-- First row: header -->
                 <div class="calendar-time time-label"></div> <!-- leere Ecke -->
+                {% if rooms|length == 3 %}
+                    <style>:root { --rooms-count: {{ rooms.count }};}</style>
+                {% endif %}
                 {% for room in rooms %}
-                    <div class="calendar-header">Room {{ room }}</div>
+                    <div class="calendar-header">{{ room.name }}</div>
                 {% endfor %}
                 
                 <!-- Rows: 24 hours, 2 half hours -->

@@ -33,12 +33,14 @@ def calendar(request):
         date = timezone.now().date()
 
     cursor = CalendarCursor(date, request.user)
+    today = timezone.now().date()
 
     context = {
         "cursor": cursor,
-        "rooms": range(1, 9),
+        "rooms": Room.objects.all(),
         "hours": range(24),
         "selected_date": date,
+        "today": today,
     }
 
     return render(request, "rooms/calendar.html", context)
