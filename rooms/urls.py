@@ -5,5 +5,4 @@ app_name = "rooms"
 
 urlpatterns = [
     path('calendar/', views.calendar, name='calendar'),
-    path('calendar-data/', views.calendar_data, name='calendar_data'),
 ]

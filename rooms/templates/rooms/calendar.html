@@ -40,7 +40,8 @@
       <main class="flex-fill p-3 mt-1 mb-md-1" id="calendar-interface">
         <!-- the ACTUAL calendar interface -->
         <form action="" method="get" class="d-block ms-auto me-auto" id="dateForm">
-            <input type="date" id="myDatePicker" name="selected_date" class="btn d-block ms-auto me-auto"  >
+            <input type="date" id="myDatePicker" name="selected_date" class="btn d-block ms-auto me-auto" 
+                value="{{ cursor.date|date:'Y-m-d' }}" >
         </form>
         <!-- gridview per half an hour from 00:00 to 00:00 in one day, top to bottom-->
         <div class="calendar-wrapper">
@@ -58,7 +59,7 @@
                             {% if half == '0' %}{{ hour }}:00{% endif %}
                         </div>
                         {% for room in rooms %}
-                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}">6</div>
+                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}"> {{ cursor.date }}</div>
                         {% endfor %}
                     {% endfor %}
                 {% endfor %}
