@@ -46,19 +46,19 @@
         <div class="calendar-wrapper">
             <div class="calendar-grid">
                 <!-- First row: header -->
-                <div class="calendar-header time-label"></div> <!-- leeres Eckfeld -->
+                <div class="calendar-time time-label"></div> <!-- leere Ecke -->
                 {% for room in rooms %}
                     <div class="calendar-header">Room {{ room }}</div>
                 {% endfor %}
                 
-                <!-- Rows: 24 Stunden x 2 Halbstunden -->
+                <!-- Rows: 24 hours, 2 half hours -->
                 {% for hour in hours %}
                     {% for half in "0,1"|cut:"," %}  {# trick zum Split #}
                         <div class="calendar-time {% if half == '1' %}half-hour{% endif %}">
                             {% if half == '0' %}{{ hour }}:00{% endif %}
                         </div>
                         {% for room in rooms %}
-                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}"></div>
+                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}">6</div>
                         {% endfor %}
                     {% endfor %}
                 {% endfor %}
@@ -72,11 +72,13 @@
         <h5>Details for the slot</h5>
       </aside>
   
-      <!-- Mobile Slide-Up (lunzt ~50px rein) -->
-      <div id="mobile-slideup" class="d-md-none position-fixed bottom-0 start-0 w-100 border-top shadow slideup-container" style="transform: translateY(60%); transition: transform 0.3s;">
-        <div class="handle text-center py-2 text-white" style="border-radius: 8px 8px 0 0;">
-            <i class="fas fa-grip-lines"></i> 
-            Slot-Details
+      <!-- Mobile slide up-->
+      <div id="mobile-slideup" class="d-md-none position-fixed bottom-0 start-0 w-100 slideup-container" >
+        <div class="handle text-center py-2 text-white" >
+            <div>
+                <i class="fas fa-grip-lines me-2 "></i>
+                
+            </div> 
         </div>
         <div class="p-3">
           <h6>details for the slot</h6>
@@ -87,4 +89,6 @@
     </div>
   </div>
 <!-- calendar content ends here --------------------------------------------------------------->
+ <!-- calendar.js script -->
+ <script type="module" src="{% static 'rooms/js/calendar.js' %}"></script>
 {% endblock %}

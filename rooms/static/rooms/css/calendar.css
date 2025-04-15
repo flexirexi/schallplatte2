@@ -20,6 +20,10 @@ html[theme] .container-fluid-content {
     overflow: hidden;
 }
 
+html[theme] main {
+    min-width: 0;
+}
+
 html[theme] main,
 html[theme] aside {
     background-color: var(--bg);
@@ -38,25 +42,65 @@ html[theme] #myDatePicker {
     color: black !important;
 }
 
-/* 04 SPECIAL: THE GRID -------------------------------------------------------- */
-.calendar-wrapper {
-    height: calc(100% - 80px); /* Subtrahiere Picker-Höhe */
-    overflow-y: auto;
-    overflow-x: auto;
-    position: relative;
-  }
+html[theme] #mobile-slideup {
+    background-color: var(--bg2);
+    z-index: 3;
+    transform: translateY(80%); 
+    transition: transform 0.3s;
+    border-radius: 20px;
+    box-shadow: -5px -5px 10px #00000035;
+    min-height: 300px;
+    border: 2px solid var(--link);
+    border-top: 3px solid var(--link);
+}
+
+html[theme] .handle {
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+}
+
+.calendar-wrapper::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
   
-  .calendar-grid {
+.calendar-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+.calendar-wrapper::-webkit-scrollbar-thumb {
+    background-color: #000000a0;
+    border-radius: 4px;
+    background-clip: padding-box;
+    border: 2px solid transparent; 
+}
+
+.calendar-wrapper::-webkit-scrollbar-corner {
+    background: transparent; 
+}
+
+/* 04 SPECIAL: THE GRID -------------------------------------------------------- */
+html[theme] .calendar-wrapper {
+    height: 420px; /* Subtrahiere Picker-Höhe */
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+html[theme] .calendar-grid {
     display: grid;
-    grid-template-columns: 100px repeat(8, minmax(80px, 1fr));
+    grid-template-columns: 40px repeat(8, minmax(80px, 1fr));
     grid-auto-rows: 50px;
     position: relative;
     min-width: fit-content;
-  }
-  
-  /* Headings */
-  .calendar-header {
-    background: #f8f9fa;
+}
+
+/* Headings */
+html[theme] .calendar-header {
+    background-color: #000000;
     text-align: center;
     font-weight: 500;
     padding: 0.5rem;
@@ -64,45 +108,55 @@ html[theme] #myDatePicker {
     border-right: 1px solid #dee2e6;
     position: sticky;
     top: 0;
-    z-index: 2;
-  }
-  
-  .calendar-header.time-label {
-    background: #f8f9fa;
+    z-index: 1;
+    color: white;
+}
+
+html[theme] .calendar-header.time-label {
+    background: #000000;
     border-right: 3px solid #343a40;
-  }
-  
-  /* Time column */
-  .calendar-time {
-    background: #fff;
+}
+
+
+html[theme] .calendar-time {
+    background-color: var(--bg);
     text-align: right;
     padding-right: 0.5rem;
     font-size: 0.75rem;
-    color: #000000c0;
-    border-bottom: 2px solid #dee2e6;
-    border-right: 3px solid #343a40;
+    color: var(--text);
+    border-bottom: 1px solid #dee2e6;
+    border-right: 2px solid #2e3338;
+    box-shadow: 0px 15px 15px #000000b0;
     position: sticky;
     left: 0;
-    z-index: 1;
-  }
-  
-  .calendar-time.half-hour {
+    z-index: 2;
+     
+}
+
+html[theme].calendar-time.half-hour {
+}
+
+/* Cells */
+html[theme] .calendar-cell {    
+    background-color: var(--bg2);
     border-bottom: 1px solid #dee2e6;
-  }
-  
-  /* Cells */
-  .calendar-cell {
-    background: #fff;
-    border-bottom: 2px solid #dee2e6;
     border-right: 1px solid #dee2e6;
-  }
-  
-  .calendar-cell.half-hour {
+}
+
+html[theme] .calendar-cell.half-hour {
     border-bottom: 1px solid #e9ecef;
-  }
-  
+}
+
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {
-  
+    html[theme] .calendar-wrapper {
+        height: calc(100% - 100px); /* Subtrahiere Picker-Höhe */
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        position: relative;
+        border-radius: 5px;
+        margin-top: 15px;
+    }
 
 }
