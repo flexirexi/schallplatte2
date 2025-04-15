@@ -12,7 +12,10 @@ Bootstrap is used here -> in order to overwrite, use:
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
 
 html[theme] main {
-
+    background-color: var(--bg);
+    padding: 0 15px;
+    justify-content: center;
+    margin-top: 0;
 }
 
 /* 02 General classes for all pages --------------------------------------------- */
