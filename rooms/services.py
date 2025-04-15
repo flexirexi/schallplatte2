@@ -26,9 +26,35 @@ class CalendarCursor:
 
     @property
     def all_cell_keys(self):
-        return True
+        return set(
+            self.get_cell_key(
+                b.start_daytime.hour,
+                1 if b.start_daytime.minute == 30 else 0,
+                b.room.id
+            )
+            for b in self.all_bookings
+        )
 
 
     @property
     def user_cell_keys(self):
-        return True
+        return set(
+            self.get_cell_key(
+                b.start_daytime.hour,
+                1 if b.start_daytime.minute == 30 else 0,
+                b.room.id
+            )
+            for b in self.user_bookings
+        )
+
+
+    @property
+    def non_user_cell_keys(self):
+        return set(
+            self.get_cell_key(
+                b.start_daytime.hour,
+                1 if b.start_daytime.minute == 30 else 0,
+                b.room.id
+            )
+            for b in self.user_bookings  # still to be corrected
+        )

@@ -1,5 +1,6 @@
 {% extends "rooms/base.html" %}
 {% load static %}
+{% load rooms_extras %}
 
 {% block extra_css %}
   <link rel="stylesheet" href="{% static 'rooms/css/calendar.css' %}">
@@ -62,11 +63,12 @@
                             {% if half == '0' %}{{ hour }}:00{% endif %}
                         </div>
                         {% for room in rooms %}
-                            {% with key=hour|stringformat:"i"|add:"-"|add:half|add:"-"|add:room.id|stringformat:"i" %}
+                        {% with hour|addstr:"-"|addstr:half|addstr:"-"|addstr:room.id as key %}
                                 <div class="calendar-cell
                                     {% if half == '1' %}half-hour{% endif %}
                                     {% if key in cursor.user_cell_keys %} bg-user-booked
                                     {% elif key in cursor.all_cell_keys %} bg-blocked {% endif %}">
+                                        {{ key }}
                                 </div>
                             {% endwith %}
                         {% endfor %}

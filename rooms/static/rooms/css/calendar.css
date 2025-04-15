@@ -151,7 +151,7 @@ html[theme] .calendar-time {
 }
 
 
-/* Cells */
+/* Cells ------------------------- */
 html[theme] .calendar-cell {    
     background-color: var(--bg2);
     border-bottom: 1px solid #dee2e6;
@@ -166,6 +166,15 @@ html[theme] .calendar-cell:hover {
 html[theme] .calendar-cell.half-hour {
     border-bottom: 1px solid #e9ecef;
 }
+
+html[theme] .bg-user-booked {
+    background-color: var(--schallplatte);
+}
+
+html[theme] .bg-blocked {
+    background-color: #ff1f1f88;
+}
+
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {
