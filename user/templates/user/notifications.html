@@ -9,73 +9,16 @@
 {% block content %}
 <!-- index.html content starts here --------------------------------------------------->
 <!-- PROFILE DATA  --------------------------------------------------->
-<main class="container-fluid ">
-  <section class="profile_section">
-    <div class="row ">
-      <div id="profile-photo" class="col-12 col-md-3 p-4">
-        <div class="text-center">
-          <i class="far fa-user fa-lg fa-7x "></i>
-        </div>
-      </div>
-      <div class=" col-12 col-md-9 p-4">
-        <div class="profile-head">
-          <div><h4>Profile</h4></div>
-          <a rel="stylesheet" href="{% url 'user:profile_edit'%}" class="btn">
-            <i class="far fa-edit"></i>
-          </a>
-        </div>
-        <br>
-        <div id="profile-box">
-          <div class="row" id="username-container">
-            <div class="col-12 col-md-2 p-2"><strong>user name</strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="username">
-              {{ user.username  }}
-            </div>
-          </div>
-          <div class="row" id="firstname-container">
-            <div class="col-12 col-md-2 p-2"><strong>first name</strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="firstname">
-              {{ profile.firstname }}
-            </div>
-          </div>
-          <div class="row" id="lastname-container">
-            <div class="col-12 col-md-2 p-2"><strong>last name</strong></div>
-            <div class="col-12 col-md-7 p-2 bg" id="lastname">
-              {{ profile.lastname }}
-            </div>
-          </div>
-          <div class="row" id="email-container">
-            <div class="col-12 col-md-2 p-2"><strong>email</strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="email">
-              {{ user.email }}
-            </div>
-          </div>
-          <div class="row" id="instruments-container">
-            <div class="col-12 col-md-2 p-2"><strong>instruments</strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="instruments">
-              {{ profile.instruments }}
-            </div>
-          </div>
-          <div class="row" id="about-user-container">
-            <div class="col-12 col-md-2 p-2"><strong>About Me</strong></div> 
-            <div class="col-12 col-md-7 p-2 bg" id="about-user">
-              {{ profile.about }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+<main class="container-fluid ">  
     
-  <section class="booking_section">
+  <section class="notification_section">
     <!-- BOOKED ITEMS SECTION  ---------------------------------------->
      <h1 class="ms-5 mb-5 mt-3">Booked rooms: </h1>
      {% if bookings %}
      <!-- <ul class="list-group"> -->
        {% for booking in bookings %}
          <li class="list-group-item">
-          <div class="card p-4 booking-item">
+          <div class="card p-4 notification-item">
             <div class="mobile_card_switcher">
               <div class="date_card text-center col-1">
                 <h1 class="fs-1 mb-0 ">{{ booking.start_daytime|date:"d" }}</h1>
