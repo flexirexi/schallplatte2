@@ -39,7 +39,31 @@
       <!-- Main calendar interface -->
       <main class="flex-fill p-3 mt-1 mb-md-1" id="calendar-interface">
         <!-- the ACTUAL calendar interface -->
-        <h5>Kalender-Ansicht</h5>
+        <form action="" class="d-block ms-auto me-auto">
+            <input type="date" id="myDatePicker" class="btn d-block ms-auto me-auto" >
+        </form>
+        <!-- gridview per half an hour from 00:00 to 00:00 in one day, top to bottom-->
+        <div class="calendar-wrapper">
+            <div class="calendar-grid">
+                <!-- First row: header -->
+                <div class="calendar-header time-label"></div> <!-- leeres Eckfeld -->
+                {% for room in rooms %}
+                    <div class="calendar-header">Room {{ room }}</div>
+                {% endfor %}
+                
+                <!-- Rows: 24 Stunden x 2 Halbstunden -->
+                {% for hour in hours %}
+                    {% for half in "0,1"|cut:"," %}  {# trick zum Split #}
+                        <div class="calendar-time {% if half == '1' %}half-hour{% endif %}">
+                            {% if half == '0' %}{{ hour }}:00{% endif %}
+                        </div>
+                        {% for room in rooms %}
+                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}"></div>
+                        {% endfor %}
+                    {% endfor %}
+                {% endfor %}
+        
+        </div>
       </main>
   
       <!-- Right SlideView (Desktop fixed right panel, Mobile Slide-Up) -->
