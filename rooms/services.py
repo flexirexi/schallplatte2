@@ -18,3 +18,15 @@ class CalendarCursor:
             start_daytime__date=self.date).select_related("room", "user")
         self.user_bookings = [b for b in self.all_bookings if b.user == self.user]
         self.non_user_bookings = [b for b in self.all_bookings if b.user != self.user]
+
+
+    def get_cell_key(self, hour, half, room_id):
+        return f"{hour}-{half}-{room_id}"
+
+    
+    def all_cell_keys(self):
+        return True     
+
+    
+    def user_cell_keys(self):
+        return True

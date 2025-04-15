@@ -62,7 +62,7 @@
                             {% if half == '0' %}{{ hour }}:00{% endif %}
                         </div>
                         {% for room in rooms %}
-                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}"> {{ cursor.date }}</div>
+                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}"> </div>
                         {% endfor %}
                     {% endfor %}
                 {% endfor %}

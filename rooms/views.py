@@ -41,6 +41,7 @@ def calendar(request):
         "hours": range(24),
         "selected_date": date,
         "today": today,
+        "user": request.user,
     }
 
     return render(request, "rooms/calendar.html", context)
