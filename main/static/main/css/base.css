@@ -137,6 +137,22 @@ html[theme] .dropdown-menu {
     background-color: #000000d0;
 }
 
+html[theme] .message-container {
+    position: fixed;
+    top: var(--nav-height);
+    right: 10px;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+html[theme] .message-container:hover {
+    opacity: 1;
+}
+
+html[theme] .message-container .alert {
+    color: black !important;
+  }
 
 html[theme] .hero span {
     color: white;

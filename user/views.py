@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .form import EditProfileForm
 from .models import Profile
 from rooms.services import delete_booking
+from django.contrib import messages
 
 
 # Create your views here.
@@ -44,5 +45,9 @@ def notifications(request):
 
 def booking_delete_view(request, id):
     if request.method == 'POST':
-        delete_booking(id=id, user=request.user)
+        success = delete_booking(id=id, user=request.user)
+        if success:
+            messages.success(request, "Booking cancellation SUCCESSFUL.")
+        else:
+            messages.error(request, "Booking cancellation FAILED. Please try again.")
     return redirect('user:profile')

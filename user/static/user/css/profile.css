@@ -97,6 +97,10 @@ html[theme] .border-none:hover {
     color: var(--schallplatte);
 }
 
+html[theme] .modal-content {
+    background-color: var(--bg);
+}
+
 /* 03 specific elements -------------------------------------------------------- */
 .profile-head {
     display: flex;
