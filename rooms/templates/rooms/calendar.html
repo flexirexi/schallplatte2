@@ -1,6 +1,7 @@
 {% extends "rooms/base.html" %}
 {% load static %}
 {% load rooms_extras %}
+{% load widget_tweaks %}
 
 {% block extra_css %}
   <link rel="stylesheet" href="{% static 'rooms/css/calendar.css' %}">
@@ -73,7 +74,7 @@
                             data-room="{{ room.id }}"
                             data-selected="false"
                             data-blocked="{% if key in cursor.user_cell_keys or key in cursor.all_cell_keys %}true{% else %}false{% endif %}">
-                                {{ key }}
+                                
                         </div>
                         {% endwith %}
                         {% endfor %}
@@ -83,13 +84,35 @@
         </div>
       </main>
   
-      <!-- Right SlideView (Desktop fixed right panel, Mobile Slide-Up) -->
-      <!-- Desktop -->
-      <aside id="slot-detail-panel" class="d-none d-md-block col-md-3 p-3 m-1">
-        <h5>Details for the slot</h5>
-      </aside>
+      <!-- Right SlideView -->
+      <!-- desktop -->
+    <aside id="slot-detail-panel" class="d-none d-md-block col-md-3 p-3 m-1">
+        <h5>Details for your selection</h5>
+        <form method="post" action="{% url 'rooms:booking' %}">
+            {% csrf_token %}
+          
+            <div class="mb-3 d-flex justify-content-between align-items-center form-item-container">
+                <label for="{{ form.room.id_for_label }}" class="me-3 mb-0">{{ form.room.label }}</label>
+                {{ form.room|attr:"disabled:disabled"|attr:"id:id_room" }}
+            </div>
+          
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <label for="{{ form.start.id_for_label }}" class="me-3 mb-0">{{ form.start.label }}</label>
+                {{ form.start|attr:"disabled:disabled"|attr:"id:id_start" }}
+            </div>
+          
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <label for="{{ form.end.id_for_label }}" class="me-3 mb-0">{{ form.end.label }}</label>
+                {{ form.end|attr:"disabled:disabled"|attr:"id:id_end" }}
+            </div>
+          
+            {{ form.user }} {# hidden input #}
+          
+            <button type="submit" class="btn btn-primary mt-3 w-100">Confirm</button>
+          </form>
+    </aside>
   
-      <!-- Mobile slide up-->
+      <!-- mobile slide up-->
       <div id="mobile-slideup" class="d-md-none position-fixed bottom-0 start-0 w-100 slideup-container" >
         <div class="handle text-center py-2 text-white" >
             <div>

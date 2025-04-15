@@ -50,14 +50,15 @@ function calendarUX(wrapper) {
                 const from = Math.min(selectionStartValue, currentValue);
                 const to = Math.max(selectionStartValue, currentValue);
                 console.log("--------  ENTER --------");
-                // console.log("from: ",from);
-                // console.log("to: ", to);
-                // console.log("hour: ", hour);
-                // console.log("half: ", half);
-                // console.log("currentvalue: ", currentValue);
-                // console.log("selected room: ", selectedRoom);
-                // console.log("---------------------------");
-                // console.log(" ");
+                console.log("from: ",from);
+                console.log("to: ", to);
+                console.log("hour: ", hour);
+                console.log("half: ", half);
+                console.log("currentvalue: ", currentValue);
+                console.log("startvalue: ", selectionStartValue);
+                console.log("selected room: ", selectedRoom);
+                console.log("---------------------------");
+                console.log(" ");
                 console.log("Blocked:   ", blocked);
 
                 document.querySelectorAll(`.calendar-cell[data-room="${selectedRoom}"]`).forEach(c => {
@@ -73,6 +74,19 @@ function calendarUX(wrapper) {
                     }
                 });
 
+                // adding to the form for confirmation
+                const startInput = document.getElementById("id_start");
+                const endInput = document.getElementById("id_end");
+                const roomSelect = document.getElementById("id_room");
+
+                //from and to cant be used here, that's why I do it again:
+                const dynamicStart = Math.min(selectionStartValue, currentValue);
+                const dynamicEnd = Math.max(selectionStartValue, currentValue);
+
+                startInput.value = formatStart(dynamicStart);
+                endInput.value = formatEnd(dynamicEnd);
+                roomSelect.value = selectedRoom; 
+
                 // clear
                 selectedSlots.clear();
                 for (let i = from; i <= to; i++) {
@@ -87,7 +101,9 @@ function calendarUX(wrapper) {
             isSelecting = false;
             selectedRoom = null;
             selectionStartValue = null;
-            sendSelectedToCursor(); // here's my function -> ready for my cursor
+            sendSelectedToCursor(selectedSlots); // here's my function -> ready for my cursor
+            
+
         });
     }); 
       
@@ -107,6 +123,46 @@ function calendarUX(wrapper) {
 }
 
 
-function sendSelectedToCursor() {
+function sendSelectedToCursor(selectedSlots) {
+    //check if there is only one blocked cell in the selection
+    if (is_selection_blocked(selectedSlots)) {
+        alert("One or multiple slots are blocked. Please chosse other time slots.");
+        return;
+    } 
+    //click on confirmation, let the cursor add the booking
 
+}
+
+
+function is_selection_blocked(selectedSlots) {
+    const blockedSlots = [];
+
+    selectedSlots.forEach(key => {
+        const [hour, half, room] = key.split("-");
+        const cell = document.querySelector(`.calendar-cell[data-hour="${hour}"][data-half="${half}"][data-room="${room}"]`);
+  
+        if (cell && cell.dataset.blocked === "true") {
+            blockedSlots.push(key);
+        return;
+        }
+    });
+  
+    if (blockedSlots.length > 0) {
+        return true;
+    }
+    return false;
+}
+
+function formatStart(selectionStartValue) {
+    const hour = Math.floor(selectionStartValue / 2);
+    const minutes = selectionStartValue % 2 === 0 ? "00" : "30";
+    return `${hour.toString().padStart(2, "0")}:${minutes}`;
+  }
+
+function formatEnd(selectionEndValue) {
+    selectionEndValue = selectionEndValue + 1
+    console.log("to: ", selectionEndValue);
+    const hour = Math.floor(selectionEndValue / 2);
+    const minutes = selectionEndValue % 2 === 0 ? "00" : "30";
+    return `${hour.toString().padStart(2, "0")}:${minutes}`;
 }

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'main',
     'user.apps.UserConfig',
     'rooms',
+    "widget_tweaks",
 ]
 
 SITE_ID = 1

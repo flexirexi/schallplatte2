@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .services import CalendarCursor
 from .models import Room
 from django.utils import timezone
 from django.utils.dateparse import parse_date
-
+from .forms import BookingForm
+from django.views.decorators.http import require_POST
+from django.contrib import messages
 
 
 def calendar(request):
@@ -24,7 +26,24 @@ def calendar(request):
         "selected_date": date,
         "today": today,
         "user": request.user,
+        "form": BookingForm(),
     }
 
     return render(request, "rooms/calendar.html", context)
 
+
+@require_POST
+def booking(request):
+    if request.method == "POST":
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            date = form.cleaned_data["start"].date()
+            cursor = CalendarCursor(date, request.user)
+            cursor.save_booking(
+                user=request.user,
+                room=form.cleaned_data["room"],
+                start=form.cleaned_data["start"],
+                end=form.cleaned_data["end"]
+            )
+            messages.success(request, "Booking successful.")
+            return redirect("rooms:calendar")

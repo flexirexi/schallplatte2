@@ -14,7 +14,7 @@ class CalendarCursor:
         self.date = date
         self.user = user
         self.selected_keys = []
-        
+
         self.all_bookings = RoomCalendar.objects.filter(
             start_daytime__date=self.date).select_related("room", "user")
         self.user_bookings = [b for b in self.all_bookings if b.user == self.user]
@@ -49,3 +49,15 @@ class CalendarCursor:
             current += timedelta(minutes=30)
 
         return keys
+    
+    def save_booking(self, user, room, start, end):
+        for b in self.all_bookings:
+            if b.room == room and not (end <= b.start_daytime or start >= b.end_daytime):
+                raise ValueError("Conflict with existing booking.")
+
+        RoomCalendar.objects.create(
+            user=user,
+            room=room,
+            start_daytime=start,
+            end_daytime=end
+        )
