@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.getElementById("calendarWrapper");
+    if (wrapper) {
+        wrapper.scrollTo({
+            top: wrapper.scrollHeight * (2 / 3),
+            behavior: "smooth"
+          });
+    }
     
     document.querySelector('.handle').addEventListener('click', () => {
         const slide = document.getElementById('mobile-slideup');
@@ -9,5 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("myDatePicker").addEventListener("change", function() {
         document.getElementById("dateForm").submit();
     });
+
+
 });
 
