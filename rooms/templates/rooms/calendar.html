@@ -62,7 +62,13 @@
                             {% if half == '0' %}{{ hour }}:00{% endif %}
                         </div>
                         {% for room in rooms %}
-                            <div class="calendar-cell {% if half == '1' %}half-hour{% endif %}"> </div>
+                            {% with key=hour|stringformat:"i"|add:"-"|add:half|add:"-"|add:room.id|stringformat:"i" %}
+                                <div class="calendar-cell
+                                    {% if half == '1' %}half-hour{% endif %}
+                                    {% if key in cursor.user_cell_keys %} bg-user-booked
+                                    {% elif key in cursor.all_cell_keys %} bg-blocked {% endif %}">
+                                </div>
+                            {% endwith %}
                         {% endfor %}
                     {% endfor %}
                 {% endfor %}

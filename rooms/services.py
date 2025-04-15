@@ -23,10 +23,12 @@ class CalendarCursor:
     def get_cell_key(self, hour, half, room_id):
         return f"{hour}-{half}-{room_id}"
 
-    
-    def all_cell_keys(self):
-        return True     
 
-    
+    @property
+    def all_cell_keys(self):
+        return True
+
+
+    @property
     def user_cell_keys(self):
         return True
