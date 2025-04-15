@@ -13,7 +13,8 @@ class CalendarCursor:
     def __init__(self, date: datetime.date, user):
         self.date = date
         self.user = user
-
+        self.selected_keys = []
+        
         self.all_bookings = RoomCalendar.objects.filter(
             start_daytime__date=self.date).select_related("room", "user")
         self.user_bookings = [b for b in self.all_bookings if b.user == self.user]

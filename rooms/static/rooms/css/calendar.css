@@ -192,6 +192,11 @@ html[theme] .bg-blocked {
     background-color: #cf0b0b88;
 }
 
+html[theme] .selected-slot {
+    background-color: rgba(0, 123, 255, 0.3);
+    border: 1px solid #007bff;
+}
+
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {

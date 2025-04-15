@@ -64,10 +64,11 @@
                         </div>
                         {% for room in rooms %}
                         {% with hour|addstr:"-"|addstr:half|addstr:"-"|addstr:room.id as key %}
-                                <div class="calendar-cell
+                                <div class="calendar-cell 
                                     {% if half == '1' %}half-hour{% endif %}
                                     {% if key in cursor.user_cell_keys %} bg-user-booked
-                                    {% elif key in cursor.all_cell_keys %} bg-blocked {% endif %}">
+                                    {% elif key in cursor.all_cell_keys %} bg-blocked {% endif %}"
+                                    data-hour="{{ hour }}" data-half=" {{ half }}" data-room="{{ room.id }}">
                                         {{ key }}
                                 </div>
                             {% endwith %}
