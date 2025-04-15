@@ -39,8 +39,8 @@
       <!-- Main calendar interface -->
       <main class="flex-fill p-3 mt-1 mb-md-1" id="calendar-interface">
         <!-- the ACTUAL calendar interface -->
-        <form action="" class="d-block ms-auto me-auto">
-            <input type="date" id="myDatePicker" class="btn d-block ms-auto me-auto" >
+        <form action="" method="get" class="d-block ms-auto me-auto" id="dateForm">
+            <input type="date" id="myDatePicker" name="selected_date" class="btn d-block ms-auto me-auto"  >
         </form>
         <!-- gridview per half an hour from 00:00 to 00:00 in one day, top to bottom-->
         <div class="calendar-wrapper">

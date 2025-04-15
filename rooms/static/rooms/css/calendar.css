@@ -54,6 +54,10 @@ html[theme] #mobile-slideup {
     border-top: 3px solid var(--link);
 }
 
+html[theme] #mobileFilterDrawer {
+    background-color: var(--bg);
+}
+
 html[theme] .handle {
     cursor: pointer;
     border-radius: 8px 8px 0 0;
@@ -133,8 +137,6 @@ html[theme] .calendar-time {
      
 }
 
-html[theme].calendar-time.half-hour {
-}
 
 /* Cells */
 html[theme] .calendar-cell {    
