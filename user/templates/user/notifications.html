@@ -13,7 +13,7 @@
     
   <section class="notification_section">
     <!-- BOOKED ITEMS SECTION  ---------------------------------------->
-     <h1 class="ms-5 mb-5 mt-3">Booked rooms: </h1>
+     <h1 class="ms-5 mb-5 mt-3">Notifications </h1>
      {% if bookings %}
      <!-- <ul class="list-group"> -->
        {% for booking in bookings %}
@@ -49,7 +49,7 @@
        {% endfor %}
      <!-- </ul> -->
     {% else %}
-     <p>Du hast aktuell keine Buchungen.</p>
+     <p>Currently nothing here.</p>
     {% endif %}
 
     <div class="text-center mt-5 mb-4"><a id="booking_section_btn" href="{% url 'rooms:calendar' %}" class="btn">Book now</a></div>

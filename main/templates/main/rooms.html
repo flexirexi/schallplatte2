@@ -62,6 +62,12 @@
                 </p>
             </div>
         </div>
+        {% if user.is_authenticated %}
+        <a href="{% url 'rooms:calendar' %}" class="btn btn-primary mt-5">Book now</a>
+        {% else %}
+        <a href="{% url 'account_login' %}" 
+            class="btn btn-outline-light nav-contact-btn mt-5 {% if request.path == login_url %}active{% endif %}" >Login!</a>
+        {% endif %}
       </section>
       <hr>
 
@@ -141,6 +147,12 @@
                 </p>
             </div>
         </div>
+        {% if user.is_authenticated %}
+        <a href="{% url 'rooms:calendar' %}" class="btn btn-primary mt-5">Book now</a>
+        {% else %}
+        <a href="{% url 'account_login' %}" 
+            class="btn btn-outline-light nav-contact-btn mt-5 {% if request.path == login_url %}active{% endif %}" >Login!</a>
+        {% endif %}
       </section>
       <hr>
 
@@ -198,6 +210,12 @@
                 </p>
             </div>
         </div>
+        {% if user.is_authenticated %}
+        <a href="{% url 'rooms:calendar' %}" class="btn btn-primary mt-5">Book now</a>
+        {% else %}
+        <a href="{% url 'account_login' %}" 
+            class="btn btn-outline-light nav-contact-btn mt-5 {% if request.path == login_url %}active{% endif %}" >Login!</a>
+        {% endif %}
       </section>
 
  </main>
