@@ -12,14 +12,14 @@ Bootstrap is used here -> in order to overwrite, use:
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
 
 
-html[theme] main {
+html[data-theme] main {
     background-color: var(--bg);
     padding: 0;
     justify-content: center;
     margin-top: var(--nav-height);
 }
 
-html[theme] input {
+html[data-theme] input {
     width: 100%;
     height: 100%;
     background: var(--bg2);
@@ -27,7 +27,7 @@ html[theme] input {
     border-radius: 5px;
 }
 
-html[theme] textarea {
+html[data-theme] textarea {
     height: 100%;
     width: 100%;
     background-color: var(--bg2);
@@ -53,7 +53,7 @@ html[theme] textarea {
     
 }
 
-html[theme] .booking-item {
+html[data-theme] .booking-item {
     width: 95%;
     max-width: 300px;
     margin-right: auto;
@@ -61,14 +61,14 @@ html[theme] .booking-item {
     margin-top: 30px;
 }
 
-html[theme] .mobile_card_switcher {
+html[data-theme] .mobile_card_switcher {
     display: block;
     justify-items: center;
     position:relative;
     align-items: unset;
 }
 
-html[theme] .date_card {
+html[data-theme] .date_card {
     height: 95px;
     width: 95px;
     background-color: var(--accent);
@@ -84,7 +84,7 @@ html[theme="dark"] .date_card p {
     text-shadow: none;
 }
 
-html[theme] .card_content {
+html[data-theme] .card_content {
     margin-top: 70px;
 }
 
@@ -111,7 +111,7 @@ html[theme="dark"] .profile-head i {
     color: black;
 }
 
-html[theme] .profile-head a:hover i {
+html[data-theme] .profile-head a:hover i {
     color: var(--act-bg);
 }
 
@@ -119,7 +119,7 @@ html[theme] .profile-head a:hover i {
     margin-right: auto;
 }
 
-html[theme] .profile-head h4 {
+html[data-theme] .profile-head h4 {
     color: var(--schallplatte);
 }
 
@@ -148,20 +148,20 @@ html[theme] .profile-head h4 {
     color: black;
 }
 
-html[theme] #profile-photo   {
+html[data-theme] #profile-photo   {
     margin: auto;
     justify-items: center;
     padding: 50px;
 }
 
-html[theme] #profile-photo i {
+html[data-theme] #profile-photo i {
     color: var(--link);
     background-color: #00000020;
     padding: 50px 40px;
     border-radius: 90px;
 }
 
-html[theme] #profile-photo i:hover {
+html[data-theme] #profile-photo i:hover {
     color: #ffffffa0;
 }
 
@@ -169,21 +169,21 @@ html[theme] #profile-photo i:hover {
     min-height: 100px;
 }
 
-html[theme] #booking_section_btn {
+html[data-theme] #booking_section_btn {
     align-self: center;
 }
 
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {
-    html[theme] .booking-item {
+    html[data-theme] .booking-item {
         max-width: 900px;
         margin-right: auto;
         margin-left: auto;
         margin-top: 30px;
     }
     
-    html[theme] .mobile_card_switcher {
+    html[data-theme] .mobile_card_switcher {
         display: flex;
         justify-items: unset;
         position:unset;
@@ -191,7 +191,7 @@ html[theme] #booking_section_btn {
         
     }
     
-    html[theme] .date_card {
+    html[data-theme] .date_card {
         height: 95px;
         width: 95px;
         background-color: var(--accent);
@@ -209,7 +209,7 @@ html[theme] #booking_section_btn {
         color: white;
     }
 
-    html[theme] .card_content {
+    html[data-theme] .card_content {
         margin-top: unset;
     }
 

@@ -45,9 +45,9 @@ def booking(request):
                 start=form.cleaned_data["start"],
                 end=form.cleaned_data["end"]
             )
+            messages.success(request, "Booking successful.")
         else:
             print(form.errors)
             messages.error(request, "Booking failed. Please try again.")
 
-    messages.success(request, "Booking successful.")
     return redirect("rooms:calendar")

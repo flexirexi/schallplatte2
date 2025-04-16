@@ -11,39 +11,39 @@ Bootstrap is used here -> in order to overwrite, use:
 
 
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
-html[theme] * {
+html[data-theme] * {
     color: var(--text);
     box-sizing: border-box;
 }
 
-html[theme] h1,
-html[theme] h2,
-html[theme] h3,
-html[theme] h4,
-html[theme] h5,
-html[theme] h6 {
+html[data-theme] h1,
+html[data-theme] h2,
+html[data-theme] h3,
+html[data-theme] h4,
+html[data-theme] h5,
+html[data-theme] h6 {
     color: var(--title);
     text-shadow: 1px 2px 3px var(--title-shadow);
 }
 
-html[theme] body {
+html[data-theme] body {
     background-color: var(--bg2);
 }
 
-html[theme] nav {
+html[data-theme] nav {
     background-color: var(--nav-bg);
     color: var(--link-text-hover);
     padding: 0 15px;
     min-height: var(--nav-height);
 }
 
-html[theme] a {
+html[data-theme] a {
     color: var(--link);
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
 }
 
-html[theme] a:hover {
+html[data-theme] a:hover {
     color: currentColor;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -51,13 +51,13 @@ html[theme] a:hover {
     text-decoration-thickness: 1px;
 }
 
-html[theme] nav a {
+html[data-theme] nav a {
     text-decoration: none;
     color: white;
     font-size: 16px;
 }
 
-html[theme] nav a:hover {
+html[data-theme] nav a:hover {
     color: var(--link-text-hover);
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -67,7 +67,7 @@ html[theme] nav a:hover {
 
 
 /* 02 General classes for all pages --------------------------------------------- */
-html[theme] .btn {
+html[data-theme] .btn {
     background-color: var(--act-bg);
     color: var(--act-text);
     border: 1px solid var(--act-border);
@@ -77,7 +77,7 @@ html[theme] .btn {
     width: fit-content;
 }
 
-html[theme] .btn:hover {
+html[data-theme] .btn:hover {
     background-color: var(--act-bg-hover);
     color: var(--act-text-hover);
     border: 1px solid var(--act-text-hover);
@@ -93,24 +93,24 @@ html[theme] .btn:hover {
     padding: 0;
 }
 
-html[theme] .navbar-toggler,
-html[theme] .navbar-toggler:focus {
+html[data-theme] .navbar-toggler,
+html[data-theme] .navbar-toggler:focus {
     border: none;   
     outline: none;
     box-shadow: none; 
     transition: background-color 0.4s ease-out;
 }
 
-html[theme] .navbar-toggler:active {
+html[data-theme] .navbar-toggler:active {
     background-color: #ffffff50;
 }
 
-html[theme] .dropdown-menu {
+html[data-theme] .dropdown-menu {
     background-color: #000000d0;
 }
 
 
-html[theme] .message-container {
+html[data-theme] .message-container {
     position: fixed;
     top: var(--nav-height);
     right: 10px;
@@ -119,11 +119,11 @@ html[theme] .message-container {
     z-index: 1000;
 }
 
-html[theme] .message-container:hover {
+html[data-theme] .message-container:hover {
     opacity: 1;
 }
 
-html[theme] .message-container .alert {
+html[data-theme] .message-container .alert {
     color: black !important;
   }
 
@@ -147,7 +147,7 @@ html[theme] .message-container .alert {
     background-color: #ffffff50;
 }
 
-html[theme] #logged-in-dropdown a:hover {
+html[data-theme] #logged-in-dropdown a:hover {
     background-color: #000000a0;
 }
 

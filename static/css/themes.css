@@ -58,14 +58,14 @@ html[theme="light"] {
     --dis-border: #A4B7B6; 
 }
 
-html[theme] .color1 {
+html[data-theme] .color1 {
     background-color: var(--link);
 }
 
-html[theme] .color2 {
+html[data-theme] .color2 {
     background-color: var(--accent);
 }
 
-html[theme] .color3 {
+html[data-theme] .color3 {
     background-color: var(--accent2);
 }

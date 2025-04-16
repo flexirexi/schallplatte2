@@ -12,7 +12,7 @@ Bootstrap is used here -> in order to overwrite, use:
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
 
 
-html[theme] main {
+html[data-theme] main {
     background-color: var(--bg);
     padding: 0;
     justify-content: center;
@@ -25,7 +25,7 @@ html[theme] main {
     padding: 30px 0;
 }
 
-html[theme] .notification-item {
+html[data-theme] .notification-item {
     width: 95%;
     max-width: 350px;
     margin-right: auto;
@@ -33,14 +33,14 @@ html[theme] .notification-item {
     margin-top: 30px;
 }
 
-html[theme] .mobile_card_switcher {
+html[data-theme] .mobile_card_switcher {
     display: block;
     justify-items: center;
     position:relative;
     align-items: unset;
 }
 
-html[theme] .mobile_card_switcher_reverse {
+html[data-theme] .mobile_card_switcher_reverse {
     display: flex;
     justify-items: flex-end;
     position:unset;
@@ -48,7 +48,7 @@ html[theme] .mobile_card_switcher_reverse {
     width: 100%;
 }
 
-html[theme] .date_card {
+html[data-theme] .date_card {
     height: 75px;
     width: 95px;
     background-color: var(--accent);
@@ -64,7 +64,7 @@ html[theme="dark"] .date_card p {
     text-shadow: none;
 }
 
-html[theme] .card_content {
+html[data-theme] .card_content {
     margin-top: 70px;
     min-width: 170px;
 }
@@ -77,21 +77,21 @@ html[theme] .card_content {
     background-color: #00000020;
 }
 
-html[theme] .border-none {
+html[data-theme] .border-none {
     border: none;
 }
 
-html[theme] .border-none:hover {
+html[data-theme] .border-none:hover {
     border: none;
     color: var(--schallplatte);
 }
 
 /* 03 specific elements -------------------------------------------------------- */
-html[theme] #booking_section_btn {
+html[data-theme] #booking_section_btn {
     align-self: center;
 }
 
-html[theme] .time-color {
+html[data-theme] .time-color {
     color: var(--schallplatte);
 
 }
@@ -99,33 +99,33 @@ html[theme] .time-color {
 
 /* MEDIA QUERIES --------------------------------------------------------------- */
 @media (min-width: 768px) {
-    html[theme] .notification-item {
+    html[data-theme] .notification-item {
         max-width: 800px;
         margin-right: auto;
         margin-left: auto;
         margin-top: 30px;
     }
     
-    html[theme] .mobile_card_switcher {
+    html[data-theme] .mobile_card_switcher {
         display: flex;
         justify-items: unset;
         position:unset;
         align-items: center;   
     }
 
-    html[theme] .mobile_card_switcher_reverse {
+    html[data-theme] .mobile_card_switcher_reverse {
         display: flex;
         flex-direction: column;  
         gap: 5px;           
         align-items: flex-end; 
     }
 
-    html[theme] .mobile_card_switcher_reverse button {
+    html[data-theme] .mobile_card_switcher_reverse button {
         display: block;
         min-width: 100px;
     }
     
-    html[theme] .date_card {
+    html[data-theme] .date_card {
         height: 95px;
         width: 95px;
         background-color: var(--accent);
@@ -145,7 +145,7 @@ html[theme] .time-color {
 
 
     
-    html[theme] .card_content {
+    html[data-theme] .card_content {
         margin-top: unset;
     }
 }

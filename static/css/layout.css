@@ -3,7 +3,7 @@
     --padding-horizontal: 15px;
 }
 
-html[theme] main {
+html[data-theme] main {
     margin-top: var(--nav-height);
 
 }

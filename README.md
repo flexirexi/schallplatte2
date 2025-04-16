@@ -1,7 +1,9 @@
 ![Mockup image](doc/img/collage.png)
 
- # Die Schallplatte
- Developer: Felix Lehmann
+ # Die Schallplatte - the music center
+ Developer: Felix Lehmann<br>
+Heroku App: [Link](https://schallplatte-a3c727a1af8b.herokuapp.com/)<br>
+Github: [Link](https://github.com/flexirexi/schallplatte)
 
  This project simulates a music center, called Schallplatte, which rents 9 rehearsal rooms to its members/musicians. It seeks to create and maintain a community for musicians, that's why an online forum has been announced for the near future. As hinted in the milestones (the about page), an own rock event/festival is planned. By now, the modern and minimalistic design of this website shall attract for young people. So, this project is solely done in a mobile-first principle. Moreover, an upcoming forum on this website is announced, which shows the vitality of this builing. For explanation: "Schallplatte" is the German word for a vinyl.
 
@@ -12,8 +14,15 @@
  **Currently existing user account with multiple bookings**
  - U: w.heisenberg P: quantum2025 
  - U: e.schroedinger P: cats1935
+
  Of course you can also register and test it that way.
 
+ **Currently, these days have the most booked items:**
+ - 16/04/2025
+ - 29/04/2025
+ - 30/04/2025
+
+**Feel free to register and try it out**
 
 ___
 
@@ -264,6 +273,21 @@ istock photos (with license!)
 
 - Screenshot of the license:
 <img src="doc/img/istock_license.png" width="300px">
+
+# Clone Repository
+You can clone the repository by following these steps:
+
+1. Go to the GitHub repository
+2. Locate the Code button above the list of files and click it
+3. Select if you prefere to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard  git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY 7.Press Enter to create your local clone.
+
+# Fork Repository
+To fork the repository by following these steps:
+- Go to the GitHub repository
+- Click on Fork button in upper right hand corner
 
 # Acknowledgement
 I'd like to thank CodeInstitute for that (to be honest) quite challenging opportunity to learn web development. Finally, I'd like to thank my Mentor Mo Shami. He understands to let me learn but can say no when I need it.
