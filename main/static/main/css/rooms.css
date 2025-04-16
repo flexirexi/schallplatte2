@@ -48,7 +48,7 @@ html[data-theme] .carousel-item h5 {
 /* 03 specific elements -------------------------------------------------------- */
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-  filter: invert(1); /* Weiß → Schwarz */
+  filter: invert(1); /* Weiß  Schwarz */
 }
 
 /* MEDIA QUERIES --------------------------------------------------------------- */

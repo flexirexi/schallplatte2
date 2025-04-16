@@ -4,7 +4,6 @@ from .models import Room
 from django.utils import timezone
 from django.utils.dateparse import parse_date
 from .forms import BookingForm
-from django.views.decorators.http import require_POST
 from django.contrib import messages
 
 

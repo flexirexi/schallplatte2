@@ -188,7 +188,12 @@ Regarding the Models, there are two main models:
 
 
 ## Object Model
-Personally, this was the part with the most fun (apart from designing and creating the calendar view).
+Personally, this was the part with the most fun (apart from designing and creating the calendar view). The calendarcursor object is saved in the rooms/services.py file:
+
+<img src="doc/datamodels/CalendarCursorClass_pt1.png" width="400px">
+<img src="doc/datamodels/CalendarCursorClass_p2.png" width="400px">
+
+
 # Features
 - collapsing nav bar in mobile mode
 
@@ -204,8 +209,65 @@ Personally, this was the part with the most fun (apart from designing and creati
 
 
 # Validations
+## HTML
+<details>
+  <summary>NO ERRORS</summary>
+  <img src="doc/validation/html/about.png" width="300px">
+  <img src="doc/validation/html/calendar.png" width="300px">
+  <img src="doc/validation/html/forum.png" width="300px">
+  <img src="doc/validation/html/index.png" width="300px">
+  <img src="doc/validation/html/login.png" width="300px">
+  <img src="doc/validation/html/notifications.png" width="300px">
+  <img src="doc/validation/html/profile.png" width="300px">
+  <img src="doc/validation/html/profile_edit.png" width="300px">
+  <img src="doc/validation/html/rooms.png" width="300px">
+</details>
+
+## CSS
+<details>
+  <summary>NO ERRORS</summary>
+  <img src="doc/validation/css/global_layout.png" width="300px">
+  <img src="doc/validation/css/global_themes.png" width="300px">
+  <img src="doc/validation/css/main_about.png" width="300px">
+  <img src="doc/validation/css/main_base.png" width="300px">
+  <img src="doc/validation/css/main_forum.png" width="300px">
+  <img src="doc/validation/css/main_index.png" width="300px">
+  <img src="doc/validation/css/main_rooms.png" width="300px">
+  <img src="doc/validation/css/rooms_base.png" width="300px">
+  <img src="doc/validation/css/rooms_calendar.png" width="300px">
+  <img src="doc/validation/css/user_base.png" width="300px">
+  <img src="doc/validation/css/user_login.png" width="300px">
+    <img src="doc/validation/css/user_notification.png.png" width="300px">
+
+</details>
+
+## JS
+Important: 
+- while checking the calendar.js, JSHint is no longer up to date -> I switched to ESHint. 
+- What I did: for the variables <code> document </code>, <code> window </code> and <code> bootstrap</code>, I declared them as global as you can see in the screenshots. Since they are no fails. JS knows these variables well.
+<details>
+  <summary>NO ERRORS</summary>
+  <img src="doc/validation/js/global_theme_switcher.png" width="300px">
+  <img src="doc/validation/js/main_base.png" width="300px">
+  <img src="doc/validation/js/rooms_base.png" width="300px">
+  <img src="doc/validation/js/rooms_calendar_eslint.png" width="300px">
+  <img src="doc/validation/js/rooms_calendar_jslint_is_old_use_eslint_instead.png" width="300px">
+  
+  
+</details>
+
+
+## Python
+While using black pycodestyle to auto format, there are some infos and warnings. To, me they seem harmless..  
+<details>
+  <summary>NO ERRORS, just "could not be resolved" and "unknown word (German words)"</summary>
+  <img src="doc/validation/py/pep8.png" width="300px">
+</details>
+
 
 # Testings
+Testings have been performed conineously and with quite effort (testing on windows laptop, iphone, android phone, ipad)
+However I didnt perform automated tests due to time constraints.
 
 # Bugs
 
