@@ -3,9 +3,9 @@
  # Die Schallplatte
  Developer: Felix Lehmann
 
- This project simulates a music center which rents 9 rehearsal rooms to its members/musicians. This center seeks build up a community. However, there is clearly a business case behind, where the rooms (and sometimes) music isntruments are rent. With the modern and minimalistic design this website seeks to be attractive for young people. So, this project is solely done in a mobile-first principle. Moreover, an upcoming forum on this website is announced, which shows the vitality of this builing. 
+ This project simulates a music center which rents 9 rehearsal rooms to its members/musicians. It seeks to create and maintain a community for musicians, that's why an online forum has been announce for the near future as well as the first own rock event/festival. By now, the modern and minimalistic design of this website shall attract for young people. So, this project is solely done in a mobile-first principle. Moreover, an upcoming forum on this website is announced, which shows the vitality of this builing. 
 
- **The challenges** in this project mostly appeared when working with the MVS/MVT. Django is a very powerful framework but I quite often faced the challenge to not fully understand what I was doing. One of the major challenges were extending the user model and handing them in to the same form in template
+ **The challenges** in this project mostly appeared when working with the MVS/MVT. Django is a very powerful framework but I quite often didn't fully understand what I was doing. So, studying the MVT framework itself became the most time consuming part in the project. Eventually, I mastered extending the user model, as username and email was not enough for a music center that clearly wants to set up a social network.
 
  **Currently existing user account with multiple bookings**
  - U: w.heisenberg P: quantum2025 
@@ -22,11 +22,12 @@ ___
    2. [The musician](#user-expectations)
    3. [User stories](#user-stories)
 1. [Design](#first-time-user)
-      2. [Mobile First and JS](#returning-user)
-      3. [Wireframes](#wireframes)
-      5. [Colors and thems](#design)
-      1. [Fonts](#font)
-      2. [Structure](#structure)
+     2. [Mobile First and JS](#returning-user)
+     
+     3. [Wireframes](#wireframes)
+     5. [Colors and thems](#design)
+     1. [Fonts](#font)
+     2. [Structure](#structure)
 
 2. [Technologies used](#technologies-used)
    1. [Languages](#languages)
