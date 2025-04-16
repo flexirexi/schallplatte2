@@ -1,4 +1,4 @@
-/* global document */
+
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.getElementById("calendarWrapper");
     document.getElementById("booking-submit").disabled = "true";
