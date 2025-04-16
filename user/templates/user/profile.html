@@ -110,20 +110,20 @@
             <div class="modal-content">
 
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalLabel-{{ booking.id }}">Buchung wirklich löschen?</h1>
+                <h1 class="modal-title fs-5" id="modalLabel-{{ booking.id }}">Are you sure to delete?</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
 
               <div class="modal-body">
-                <p>Diese Buchung vom <strong>{{ booking.start_daytime|date:"d.m.Y H:i" }}</strong> bis <strong>{{ booking.end_daytime|date:"d.m.Y H:i" }}</strong> wird gelöscht.</p>
+                <p>This booking item <strong>{{ booking.start_daytime|date:"d.m.Y H:i" }}</strong> to <strong>{{ booking.end_daytime|date:"d.m.Y H:i" }}</strong> will be cancelled.</p>
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 
                 <form method="POST" action="{% url 'user:delete_booking' booking.id %}">
                   {% csrf_token %}
-                  <button type="submit" class="btn bg-danger border-none">Löschen bestätigen</button>
+                  <button type="submit" class="btn bg-danger border-none">Confirm deletion</button>
                 </form>
               </div>
 

@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.getElementById("calendarWrapper");
+    document.getElementById("booking-submit").disabled = "true";
     if (wrapper) {
         wrapper.scrollTo({
             top: wrapper.scrollHeight * (2 / 3),
@@ -38,6 +39,12 @@ function calendarUX(wrapper) {
             selectedSlots.clear();
             highlightCell(cell);
             console.log("DOWN --------");
+            const blocked = cell.dataset.blocked;
+            if (blocked=="true") {
+                booking_blocked();
+            } else {
+                booking_not_blocked();
+            }
         });
       
         cell.addEventListener("mouseenter", (e) => {
@@ -46,20 +53,14 @@ function calendarUX(wrapper) {
                 const half = parseInt(cell.dataset.half);
                 const currentValue = hour * 2 + half;
                 const blocked = cell.dataset.blocked;
+                console.log(blocked);
 
                 const from = Math.min(selectionStartValue, currentValue);
                 const to = Math.max(selectionStartValue, currentValue);
-                console.log("--------  ENTER --------");
-                console.log("from: ",from);
-                console.log("to: ", to);
-                console.log("hour: ", hour);
-                console.log("half: ", half);
-                console.log("currentvalue: ", currentValue);
-                console.log("startvalue: ", selectionStartValue);
-                console.log("selected room: ", selectedRoom);
-                console.log("---------------------------");
-                console.log(" ");
-                console.log("Blocked:   ", blocked);
+                if (blocked=="true") {
+                    booking_blocked();
+                } 
+
 
                 document.querySelectorAll(`.calendar-cell[data-room="${selectedRoom}"]`).forEach(c => {
                     const h = parseInt(c.dataset.hour);
@@ -78,6 +79,7 @@ function calendarUX(wrapper) {
                 const startInput = document.getElementById("id_start");
                 const endInput = document.getElementById("id_end");
                 const roomSelect = document.getElementById("id_room");
+                const roomSelectFake = document.getElementById("id_room_fake");
 
                 //from and to cant be used here, that's why I do it again:
                 const dynamicStart = Math.min(selectionStartValue, currentValue);
@@ -86,6 +88,7 @@ function calendarUX(wrapper) {
                 startInput.value = formatStart(dynamicStart);
                 endInput.value = formatEnd(dynamicEnd);
                 roomSelect.value = selectedRoom; 
+                roomSelectFake.value = selectedRoom;
 
                 // clear
                 selectedSlots.clear();
@@ -122,47 +125,56 @@ function calendarUX(wrapper) {
     }
 }
 
+function booking_blocked() {
+    const btn = document.getElementById("booking-submit");
+    const msg = document.getElementById("form-error-msg");
+    btn.disabled = true;
+    msg.innerHTML = "No booking possible. Your selection overlaps with existing bookings.";
+}
+
+function booking_not_blocked() {
+    const btn = document.getElementById("booking-submit");
+    const msg = document.getElementById("form-error-msg");
+    btn.disabled = false;
+    msg.innerHTML = "";
+}
+
 
 function sendSelectedToCursor(selectedSlots) {
-    //check if there is only one blocked cell in the selection
-    if (is_selection_blocked(selectedSlots)) {
-        alert("One or multiple slots are blocked. Please chosse other time slots.");
-        return;
-    } 
+    console.log(selectedSlots);
     //click on confirmation, let the cursor add the booking
 
 }
 
 
-function is_selection_blocked(selectedSlots) {
-    const blockedSlots = [];
 
-    selectedSlots.forEach(key => {
-        const [hour, half, room] = key.split("-");
-        const cell = document.querySelector(`.calendar-cell[data-hour="${hour}"][data-half="${half}"][data-room="${room}"]`);
-  
-        if (cell && cell.dataset.blocked === "true") {
-            blockedSlots.push(key);
-        return;
-        }
-    });
-  
-    if (blockedSlots.length > 0) {
-        return true;
-    }
-    return false;
-}
 
 function formatStart(selectionStartValue) {
     const hour = Math.floor(selectionStartValue / 2);
     const minutes = selectionStartValue % 2 === 0 ? "00" : "30";
-    return `${hour.toString().padStart(2, "0")}:${minutes}`;
+    let dateform = document.getElementById("myDatePicker");
+    console.log("date: ", dateform.value);
+    return `${dateform.value}T${ hour.toString().padStart(2, "0")}:${minutes}`;
   }
 
 function formatEnd(selectionEndValue) {
     selectionEndValue = selectionEndValue + 1
     console.log("to: ", selectionEndValue);
+    let dateform = document.getElementById("myDatePicker");
     const hour = Math.floor(selectionEndValue / 2);
     const minutes = selectionEndValue % 2 === 0 ? "00" : "30";
-    return `${hour.toString().padStart(2, "0")}:${minutes}`;
+    return `${dateform.value}T${hour.toString().padStart(2, "0")}:${minutes}`;
 }
+
+
+
+document.getElementById("booking-submit").addEventListener("click", function (e) {
+    
+    const realRoom = document.getElementById("id_room");
+    const fakeRoom = document.getElementById("id_room_fake");
+    realRoom.value = fakeRoom.value;
+
+    
+    document.getElementById("id_start").readOnly = false;
+    document.getElementById("id_end").readOnly = false;
+});

@@ -1,15 +1,20 @@
 from django import forms
 from .models import Room
+from django.contrib.auth.models import User
 
 
 class BookingForm(forms.Form):
     room = forms.ModelChoiceField(queryset=Room.objects.all())
     start = forms.DateTimeField()
     end = forms.DateTimeField()
-    user = forms.IntegerField(widget=forms.HiddenInput())
+    user = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.HiddenInput(), required=False)
 
     def clean(self):
         cleaned = super().clean()
-        if cleaned["end"] <= cleaned["start"]:
-            raise forms.ValidationError("End time must be after start time.")
+        start = cleaned.get("start")
+        end = cleaned.get("end")
+
+        if start and end and end <= start:
+            raise forms.ValidationError("Endzeit muss nach Startzeit liegen.")
+
         return cleaned
