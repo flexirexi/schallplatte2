@@ -17,12 +17,16 @@ class Room(models.Model):
 
 
 class RoomCalendar(models.Model):
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, 
-                                related_name="room_bookings")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, 
-                                   related_name="user_bookings", blank=True)
+    room = models.ForeignKey(
+        Room, on_delete=models.CASCADE, related_name="room_bookings"
+    )
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_bookings", blank=True
+    )
     start_daytime = models.DateTimeField()
     end_daytime = models.DateTimeField()
 
     def __str__(self):
-        return f"{self.room.name},{self.user}: {self.start_daytime} - {self.end_daytime}"
+        return (
+            f"{self.room.name},{self.user}: {self.start_daytime} - {self.end_daytime}"
+        )

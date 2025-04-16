@@ -7,7 +7,9 @@ class BookingForm(forms.Form):
     room = forms.ModelChoiceField(queryset=Room.objects.all())
     start = forms.DateTimeField()
     end = forms.DateTimeField()
-    user = forms.ModelChoiceField(queryset=User.objects.all(), widget=forms.HiddenInput(), required=False)
+    user = forms.ModelChoiceField(
+        queryset=User.objects.all(), widget=forms.HiddenInput(), required=False
+    )
 
     def clean(self):
         cleaned = super().clean()

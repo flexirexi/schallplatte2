@@ -6,22 +6,22 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('user', '0002_room_alter_profile_user_roomcalendar'),
+        ("user", "0002_room_alter_profile_user_roomcalendar"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='roomcalendar',
-            name='room',
+            model_name="roomcalendar",
+            name="room",
         ),
         migrations.RemoveField(
-            model_name='roomcalendar',
-            name='user',
+            model_name="roomcalendar",
+            name="user",
         ),
         migrations.DeleteModel(
-            name='Room',
+            name="Room",
         ),
         migrations.DeleteModel(
-            name='RoomCalendar',
+            name="RoomCalendar",
         ),
     ]

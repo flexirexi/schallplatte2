@@ -9,42 +9,47 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('user', '0001_initial'),
+        ("user", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='profile',
-            name='email',
+            model_name="profile",
+            name="email",
         ),
         migrations.RemoveField(
-            model_name='profile',
-            name='username',
+            model_name="profile",
+            name="username",
         ),
         migrations.AddField(
-            model_name='profile',
-            name='user',
-            field=models.OneToOneField(default='null', on_delete=django.db.models.deletion.CASCADE, related_name='profile', to=settings.AUTH_USER_MODEL),
+            model_name="profile",
+            name="user",
+            field=models.OneToOneField(
+                default="null",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="profile",
+                to=settings.AUTH_USER_MODEL,
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='profile',
-            name='about',
+            model_name="profile",
+            name="about",
             field=models.TextField(blank=True, max_length=500),
         ),
         migrations.AlterField(
-            model_name='profile',
-            name='firstname',
+            model_name="profile",
+            name="firstname",
             field=models.CharField(blank=True, max_length=150),
         ),
         migrations.AlterField(
-            model_name='profile',
-            name='instruments',
+            model_name="profile",
+            name="instruments",
             field=models.CharField(blank=True, max_length=150),
         ),
         migrations.AlterField(
-            model_name='profile',
-            name='lastname',
+            model_name="profile",
+            name="lastname",
             field=models.CharField(blank=True, max_length=150),
         ),
     ]

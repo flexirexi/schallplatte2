@@ -15,26 +15,57 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Room',
+            name="Room",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150)),
-                ('size_cat', models.CharField(max_length=150)),
-                ('drum_kit', models.CharField(max_length=150)),
-                ('guitar_amps', models.CharField(max_length=150)),
-                ('bass_amps', models.CharField(max_length=150)),
-                ('piano', models.CharField(max_length=150)),
-                ('synth', models.CharField(max_length=150)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150)),
+                ("size_cat", models.CharField(max_length=150)),
+                ("drum_kit", models.CharField(max_length=150)),
+                ("guitar_amps", models.CharField(max_length=150)),
+                ("bass_amps", models.CharField(max_length=150)),
+                ("piano", models.CharField(max_length=150)),
+                ("synth", models.CharField(max_length=150)),
             ],
         ),
         migrations.CreateModel(
-            name='RoomCalendar',
+            name="RoomCalendar",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('start_daytime', models.DateTimeField()),
-                ('end_daytime', models.DateTimeField()),
-                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='room_bookings', to='rooms.room')),
-                ('user', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_bookings', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("start_daytime", models.DateTimeField()),
+                ("end_daytime", models.DateTimeField()),
+                (
+                    "room",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="room_bookings",
+                        to="rooms.room",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        blank=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="user_bookings",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

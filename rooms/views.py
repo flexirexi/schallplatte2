@@ -10,7 +10,7 @@ from django.contrib import messages
 
 def calendar(request):
     selected_date = request.GET.get("selected_date")
-    
+
     if selected_date:
         date = parse_date(selected_date)
     else:
@@ -43,7 +43,7 @@ def booking(request):
                 user=request.user,
                 room=form.cleaned_data["room"],
                 start=form.cleaned_data["start"],
-                end=form.cleaned_data["end"]
+                end=form.cleaned_data["end"],
             )
             messages.success(request, "Booking successful.")
         else:

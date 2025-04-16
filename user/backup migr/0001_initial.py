@@ -8,30 +8,52 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Profile',
+            name="Profile",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(max_length=150)),
-                ('firstname', models.CharField(max_length=150)),
-                ('lastname', models.CharField(max_length=150)),
-                ('email', models.EmailField(max_length=150)),
-                ('instruments', models.CharField(max_length=150)),
-                ('about', models.TextField(max_length=500)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("username", models.CharField(max_length=150)),
+                ("firstname", models.CharField(max_length=150)),
+                ("lastname", models.CharField(max_length=150)),
+                ("email", models.EmailField(max_length=150)),
+                ("instruments", models.CharField(max_length=150)),
+                ("about", models.TextField(max_length=500)),
             ],
         ),
         migrations.CreateModel(
-            name='Notifications',
+            name="Notifications",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('message', models.TextField(max_length=1000)),
-                ('received', models.DateTimeField(auto_now_add=True)),
-                ('read', models.BooleanField(default=False)),
-                ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='notifications', to='user.profile')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("message", models.TextField(max_length=1000)),
+                ("received", models.DateTimeField(auto_now_add=True)),
+                ("read", models.BooleanField(default=False)),
+                (
+                    "user_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="notifications",
+                        to="user.profile",
+                    ),
+                ),
             ],
         ),
     ]

@@ -4,8 +4,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,
-                                related_name="profile", blank=True)
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="profile", blank=True
+    )
     firstname = models.CharField(max_length=150, blank=True)
     lastname = models.CharField(max_length=150, blank=True)
     instruments = models.CharField(max_length=150, blank=True)
@@ -16,8 +17,9 @@ class Profile(models.Model):
 
 
 class Notifications(models.Model):
-    user_id = models.ForeignKey(Profile, on_delete=models.CASCADE,
-                                related_name="notifications")
+    user_id = models.ForeignKey(
+        Profile, on_delete=models.CASCADE, related_name="notifications"
+    )
     message = models.TextField(max_length=1000)
     received = models.DateTimeField(auto_now_add=True)
     read = models.BooleanField(default=False)
