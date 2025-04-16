@@ -19,28 +19,28 @@ ___
 
 # Table of content
 
-- [Site Owner Goals](#)
-- [Target group](#)
-   - [The musician](#)
-   - [User stories](#)
-- [Design](#)
-     - [Mobile First and JS](#)
-     - [Wireframes](#)
-     - [Colors & Theme](#)
-- [Technologies used](#)
-- [Structure](#)
-    - [Page structure and apps](#)
-    - [Data models](#)
-    - [Object models](#)
-- [Features](#)
-- [Validations](#)
-- [Testings](#)
-- [Bugs](#)
-- [Heroku deployment](#)
-- [credits](#)
-   - [References](#)
-   - [Media](#)
-- [Acknowledgments](#)
+- [Site Owner Goals](#site-owner-goals)
+- [Target group](#target-group)
+   - [The musician](#the-musician)
+   - [User stories](#user-stories)
+- [Design](#design)
+     - [Mobile First and JS](#mobile-first--js)
+     - [Wireframes](#wireframes)
+     - [Colors & Theme](#colors-and-theme)
+- [Technologies used](#technologies-used)
+- [Structure](#structure)
+    - [Page structure and apps](#page-structure-and-apps)
+    - [Data models](#data-models)
+    - [Object models](#object-model)
+- [Features](#features)
+- [Validations](#validations)
+- [Testings](#testings)
+- [Bugs](#bugs)
+- [Heroku deployment](#heroku-deployment)
+- [credits](#credits)
+   - [References](#references)
+   - [Media](#media)
+- [Acknowledgments](#acknowledgement)
 
 
 # Site Owner Goals
@@ -130,7 +130,7 @@ Regarding the color paletts: I have two paletts. One for a dark theme, one for a
 - Heroku
 - Bootstrap 5.3
 - Fontawesome 5
-- GitHub
+- GitHub (Projects, Kanban, Milestones)
 - Git
 - Visual Studio Code
 - Google Chrome dev tools
@@ -141,12 +141,58 @@ Regarding the color paletts: I have two paletts. One for a dark theme, one for a
 
 # Structure
 ## Page structure and apps
-- 
+- Since this project is a full stack project within the Django framework, the page structure orientates stongly to the app structure:
+   - app: main
+      - landing page (index.html)
+      - about.html
+      - forum.html
+      - rooms.html (this has not much to do with the app rooms, this page's purpose is to explain what rooms there are)
+   - app: user
+      - login.html (belongs to allAuth)
+      - signup.html (belongs to allAuth)
+      - profile.html
+      - prodile_edit.html
+      - notifications
+   - app: rooms
+      - calendar.html
+   - admin
+   - allAuth
+
+Seeing this structure, it is obvious that I extended allAuth's standard user model. In the next chapter (Data Models), I'll explain more details. It is also been said, that I did not finish the notification.html as well as the filter section in calendar.html. But the main functionalities are all working (adding, cancelling bookings etc.).
 
 ## Data Models
-## Object Model
+Regarding the Models, there are two main models:
 
+<details>
+  <summary>extended user model. once for profile data which can be edited on the user's profile page and notifications (unfinished)</summary>
+  <img src="doc/datamodels/dm_user.png" width="300px">
+  <img src="doc/datamodels/dm_user1.png" width="300px">
+  <img src="doc/datamodels/dm_user2.png" width="300px">
+</details>
+
+<details>
+  <summary>Rooms model. Each of the 9 rooms is saved with size, instruments and name. Then, the calendar model. here are all booked items of a room by a user saved. Data validation is done by the interactive calendar tool.</summary>
+  <img src="doc/datamodels/dm_rooms.png" width="300px">
+  <img src="doc/datamodels/dm_rooms1.png" width="300px">
+  <img src="doc/datamodels/dm_rooms2.png" width="300px">
+</details>
+
+
+## Object Model
+Personally, this was the part with the most fun (apart from designing and creating the calendar view).
 # Features
+- collapsing nav bar in mobile mode
+
+- logged in profile button in nav bar 
+
+- calender interface -> mark multiple slots
+
+- mobile view of the booking tool (moving filters to a drawer, moving confirmation sectoin to the bottom slide view)
+
+- deleting booked items
+
+- auto-fade confirmations
+
 
 # Validations
 
@@ -154,10 +200,70 @@ Regarding the color paletts: I have two paletts. One for a dark theme, one for a
 
 # Bugs
 
+<details>
+  <summary>in mobile mode (only), it is possible to select time slots that are booked already. in desktop mode you get an error message.
+  </summary>
+<img src="doc/bugs/mobile_data_validation.png" width="300px">
+
+</details>
+
+
 # Heroku deployment
+The project was deployed via github in heroku. 
+- go to Heroku dashboard, create a new app
+- after creation, under Settings -> config var -> click on reveal config vars and ADD:
+    - DISABLE_COLLECTSTATIC with a value of 1
+- in settings.py, add Heroku's hostname to ALLOWED_HOSTS:
+- go to the deploy tab -> Deployment method -> enable GitHub integration: click on Connect to GitHub, you might authenticate-   search for your github repo, scroll down, deploy branch main,
+- to to Resources tab, choose an Eco Dyno which is the lightweight container to run your app
+- remove any database add-on from the Resources tab - can result in usage costs..
 
 # Credits
 ## References
+how to change formatting in the command line text - by [joeld](https://stackoverflow.com/users/19104/joeld) at [https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal)
+
+- django:
+   - extend allAuth's user data
+      - [https://docs.djangoproject.com/en/5.2/topics/auth/customizing/#storing-additional-information-about-users](https://docs.djangoproject.com/en/5.2/topics/auth/customizing/#storing-additional-information-about-users)
+
+   - numeric loops in html templates with django
+      - [https://django.cowhite.com/blog/numeric-for-loop-in-django-templates/](https://django.cowhite.com/blog/numeric-for-loop-in-django-templates/)
+      - [https://pythoncircle.com/post/685/for-loop-in-django-template/](https://pythoncircle.com/post/685/for-loop-in-django-template/)
+ 
+   - concatenate strings in django templates with appname_extras.py
+      - [https://stackoverflow.com/questions/4386168/how-to-concatenate-strings-in-django-templates](https://stackoverflow.com/questions/4386168/how-to-concatenate-strings-in-django-templates)
+
+- js select multiple cells
+   - [https://stackoverflow.com/questions/70444997/select-multiple-cells-in-grid-of-canvas-using-a-mouse-drag](https://stackoverflow.com/questions/70444997/select-multiple-cells-in-grid-of-canvas-using-a-mouse-drag)
+
 ## Media
+I used several pictures from pexels.com (free use) and 2 images from istock, of which i own a standard license. The image files can be found under static/img/free and static/img/istock. The logo was created with OpenAI (chatgpt), which is for educational purpose only.
+schallplatte01.jpg by [Pixabay](https://www.pexels.com/@pixabay/) on [pexels.com](https://www.pexels.com/photo/vinyl-record-playing-164853/)
+- schallplatte02.jpg by [cottonbro studio](https://www.pexels.com/@cottonbro/) on [pexels.com](https://www.pexels.com/photo/a-room-with-musical-instruments-9644665/)
+- schallplatte03.jpg by [Pavel Danilyuk](https://www.pexels.com/@pavel-danilyuk/) on [pexels.com](https://www.pexels.com/photo/black-and-silver-drum-set-7802303/)
+- schallplatte04.jpg by [ArtHouse Studio](https://www.pexels.com/@arthousestudio/) on [pexels.com](https://www.pexels.com/photo/modern-electric-and-acoustic-guitars-on-stage-in-club-4413722/)
+- schallplatte05.jpg by [Pavel Danilyuk](https://www.pexels.com/@pavel-danilyuk/) on [pexels.com](https://www.pexels.com/photo/black-and-white-music-studio-7802300/)
+- schallplatte06.jpg by [RDNE Stock project](https://www.pexels.com/@rdne/) on [pexels.com](https://www.pexels.com/photo/a-drum-set-in-a-studio-8197227/)
+- schallplatte07.jpg by  [Pavel Danilyuk](https://www.pexels.com/@pavel-danilyuk/) on [pexels.com](https://www.pexels.com/photo/a-person-using-pedalboard-7802334/)
+- schallplatte08.jpg by [Dima Pavlenko](https://www.pexels.com/@dima-pavlenko-1200758/) on [pexels.com](https://www.pexels.com/photo/a-brown-drum-throne-3927789/)
+- schallplatte09.jpg by [RDNE Stock project](https://www.pexels.com/@rdne/) on [pexels.com](https://www.pexels.com/photo/a-microphone-and-a-pop-filter-8198559/)
+- schallplatte10.jpg by [cottonbro studio](https://www.pexels.com/@cottonbro/) on [pexels.com](https://www.pexels.com/photo/loudspeakers-on-floor-5657674/)
+- schallplatte11.jpg by me (my own picture)
+- schallplatte12.jpg by me (my own picture)
+- schallplatte13.jpg by [RDNE Stock project](https://www.pexels.com/@rdne/) on [pexels.com](https://www.pexels.com/photo/electric-guitars-near-amplifiers-8197270/)
+- schallplatte14.jpg by [cottonbro studio](https://www.pexels.com/@cottonbro/) on [pexels.com](https://www.pexels.com/photo/close-up-of-a-drum-set-in-a-dark-room-5648530/)
+- schallplatte15.jpg by [cottonbro studio](https://www.pexels.com/@cottonbro/)  on [pexels.com](https://www.pexels.com/photo/guitar-in-recording-studio-5648521/)
+- schallplatte16.jpg by [Keyur Bhalani](https://www.pexels.com/@keyur-bhalani-746843124/) on [pexels.com](https://www.pexels.com/photo/piano-and-drums-18650952/)
+- schallplatte17.jpg by [Pixabay](https://www.pexels.com/@pixabay/) on [pexels.com](https://www.pexels.com/photo/groud-level-shot-of-ghettoblaster-159613/)
+- schallplatte18.jpg by [Moliv Fotografia](https://www.pexels.com/@molivfotografia/) on [pexels.com](https://www.pexels.com/photo/sculpture-over-clock-on-wall-12918383/)
+
+
+istock photos (with license!)
+- istock01 by [gorodenkoff](https://www.istockphoto.com/de/portfolio/gorodenkoff?mediatype=photography) on [istockphoto.com](https://www.istockphoto.com/de/foto/etablierung-der-aufnahme-musikprobestudio-im-loftraum-mit-schlagzeug-in-der-mitte-gm1462109367-495762886)
+- istock02 by [Saha_Litt](https://www.istockphoto.com/de/portfolio/Sasha_Litt?mediatype=photography) on [istockphoto.com](https://www.istockphoto.com/de/foto/proberaum-innenausbau-von-tonstudio-mit-professioneller-ausstattung-gm1037590596-277749718)
+
+- Screenshot of the license:
+<img src="doc/img/istock_license.png" width="300px">
 
 # Acknowledgement
+I'd like to thank CodeInstitute for that (to be honest) quite challenging opportunity to learn web development. Finally, I'd like to thank my Mentor Mo Shami. He understands to let me learn but can say no when I need it.
