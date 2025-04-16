@@ -9,7 +9,6 @@ Bootstrap is used here -> in order to overwrite, use:
 @import url("/static/css/themes.css");
 @import url("/static/css/layout.css");
 
-
 /* 01 Generic STYLES that apply for all html pages ------------------------------ */
 html[data-theme] * {
     color: var(--text);

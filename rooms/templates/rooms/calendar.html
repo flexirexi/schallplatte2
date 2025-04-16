@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="{% static 'rooms/css/calendar.css' %}">
 {% endblock %}
 
-
 {% block content %}
 <!-- calendar content starts here (now it get's tricky ;)) ------------------------------------------------------------->
 
@@ -18,7 +17,7 @@
       <!-- Left desktop filter drawer (in mobile-mode: hidden) -->
       <aside id="filter-panel" class="d-none d-md-block col-md-3 p-3 m-1">
         <!-- filters here -->
-        <h5>Filter</h5>
+        <h5>Filtersadf</h5>
         <h5 class="mb-3">Room Size</h5>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="large" id="filterSizeLarge">
@@ -71,36 +70,36 @@
             <h5>Filter</h5>
             <h5 class="mb-3">Room Size</h5>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="large" id="filterSizeLargeMobile">
-                <label class="form-check-label" for="filterSizeLargeMobile">Large (bis 10 Personen)</label>
+                <input class="form-check-input" type="checkbox" value="large" id="filterSizeLarge">
+                <label class="form-check-label" for="filterSizeLarge">Large (bis 10 Personen)</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="medium" id="filterSizeMediumMobile">
-                <label class="form-check-label" for="filterSizeMediumMobile">Medium (bis 5 Personen)</label>
+                <input class="form-check-input" type="checkbox" value="medium" id="filterSizeMedium">
+                <label class="form-check-label" for="filterSizeMedium">Medium (bis 5 Personen)</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="small" id="filterSizeSmallMobile">
-                <label class="form-check-label" for="filterSizeSmallMobile">Small (bis 3 Personen)</label>
+                <input class="form-check-input" type="checkbox" value="small" id="filterSizeSmall">
+                <label class="form-check-label" for="filterSizeSmall">Small (bis 3 Personen)</label>
             </div>
 
             <hr class="my-4">
 
             <h5 class="mb-3">Instruments</h5>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="piano" id="filterInstrumentPianoMobile">
-                <label class="form-check-label" for="filterInstrumentPianoMobile">Piano</label>
+                <input class="form-check-input" type="checkbox" value="piano" id="filterInstrumentPiano">
+                <label class="form-check-label" for="filterInstrumentPiano">Piano</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="drumkit" id="filterInstrumentDrumkitMobile">
-                <label class="form-check-label" for="filterInstrumentDrumkitMobile">Drum Kit</label>
+                <input class="form-check-input" type="checkbox" value="drumkit" id="filterInstrumentDrumkit">
+                <label class="form-check-label" for="filterInstrumentDrumkit">Drum Kit</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="amps" id="filterInstrumentAmpsMobile">
-                <label class="form-check-label" for="filterInstrumentAmpsMobile">Amps (Gitarre / Bass)</label>
+                <input class="form-check-input" type="checkbox" value="amps" id="filterInstrumentAmps">
+                <label class="form-check-label" for="filterInstrumentAmps">Amps (Gitarre / Bass)</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="synth" id="filterInstrumentSynthMobile">
-                <label class="form-check-label" for="filterInstrumentSynthMobile">Synthesizer</label>
+                <input class="form-check-input" type="checkbox" value="synth" id="filterInstrumentSynth">
+                <label class="form-check-label" for="filterInstrumentSynth">Synthesizer</label>
             </div>
         </div>
       </div>
@@ -205,14 +204,14 @@
                 <i class="fas fa-grip-lines me-2 "></i>
                 <h5>Details for your selection</h5>
                 <br>
-                <form method="post" action="{% url 'rooms:booking' %}" id="booking-form-mobile">
+                <form method="post" action="{% url 'rooms:booking' %}" id="booking-form">
                     {% csrf_token %}
                   
                     <div class="mb-3 d-flex justify-content-between align-items-center form-item-container">
-                        <label for="{{ form.room.id_for_label }}-mobile" class="me-3 mb-0">{{ form.room.label }}</label>
-                        {{ form.room|attr:"id:id_room-mobile"|attr:"hidden" }}
+                        <label for="{{ form.room.id_for_label }}" class="me-3 mb-0">{{ form.room.label }}</label>
+                        {{ form.room|attr:"id:id_room"|attr:"hidden" }}
                         
-                        <select name="room_fake_id" id="id_room_fake-mobile" disabled>
+                        <select name="room_fake_id" id="id_room_fake" disabled>
                             {% for room in rooms %}
                               <option value="{{ room.id }}">{{ room.name }}</option>
                             {% endfor %}
@@ -220,18 +219,18 @@
                     </div>
                   
                     <div class="mb-3 d-flex justify-content-between align-items-center">
-                        <label for="{{ form.start.id_for_label }}-mobile" class="me-3 mb-0">{{ form.start.label }}</label>
-                        {{ form.start|attr:"readonly"|attr:"id:id_start-mobile" }}
+                        <label for="{{ form.start.id_for_label }}" class="me-3 mb-0">{{ form.start.label }}</label>
+                        {{ form.start|attr:"readonly"|attr:"id:id_start" }}
                     </div>
                   
                     <div class="mb-3 d-flex justify-content-between align-items-center">
-                        <label for="{{ form.end.id_for_label }}-mobile" class="me-3 mb-0">{{ form.end.label }}</label>
-                        {{ form.end|attr:"readonly"|attr:"id:id_end-mobile" }}
+                        <label for="{{ form.end.id_for_label }}" class="me-3 mb-0">{{ form.end.label }}</label>
+                        {{ form.end|attr:"readonly"|attr:"id:id_end" }}
                     </div>
                   
                     {{ form.user }} {# hidden input #}
                   
-                    <button type="submit" class="btn btn-primary mt-3 w-100" id="booking-submit-mobile">Confirm</button>
+                    <button type="submit" class="btn btn-primary mt-3 w-100" id="booking-submit">Confirm</button>
                     {% if form.errors %}
                     <div class="alert alert-danger">
                         <ul>

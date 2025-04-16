@@ -6,11 +6,12 @@ Bootstrap is used here -> in order to overwrite, use:
     <selector>[theme=light"]    for elements only in light mode
 */
 
+
 @import url("/static/css/themes.css");
 @import url("/static/css/layout.css");
 
 /* 01 Generic STYLES  -------------------------------------------------------- */
-html[theme] main {
+html[data-theme] main {
     background-color: var(--bg);
     padding: 0 25px;
     justify-content: center;
@@ -19,16 +20,16 @@ html[theme] main {
 
 
 /* 02 General classes --------------------------------------------------------- */
-html[theme] .container {
+html[data-theme] .container {
     max-width: 1200px;
 }
 
-html[theme] .rooms_section {
+html[data-theme] .rooms_section {
     text-align: left;
     padding: 30px 0;
 }
 
-html[theme] .carousel-item {
+html[data-theme] .carousel-item {
     height: 350px;  
 }
 
@@ -37,7 +38,7 @@ html[theme] .carousel-item {
     object-fit: cover;
 }
 
-html[theme] .carousel-item h5 {
+html[data-theme] .carousel-item h5 {
     padding: 5px 2px;
     background-color: #00000090;
     border-radius: 5px;
@@ -48,7 +49,7 @@ html[theme] .carousel-item h5 {
 /* 03 specific elements -------------------------------------------------------- */
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-  filter: invert(1); /* Weiß → Schwarz */
+  filter: invert(1); /* Weiß  Schwarz */
 }
 
 /* MEDIA QUERIES --------------------------------------------------------------- */

@@ -1,4 +1,4 @@
-
+import { collapseNavBar } from "/static/main/js/base.js";
 
 const html = document.documentElement;
 const themeToggle = document.getElementById("theme-toggle");
@@ -18,7 +18,6 @@ function toggler() {
     const themeToggle = document.getElementById("theme-toggle");
     const themeIcon = themeToggle.querySelector("i");
     const html = document.documentElement;
-
     const newTheme = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
     html.setAttribute("data-theme", newTheme);
     localStorage.setItem("data-theme", newTheme);

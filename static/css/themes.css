@@ -26,10 +26,9 @@
     --dis-text: #889E9C; 
     --dis-bg: #A4B7B6; 
     --dis-border: #A4B7B6;
-
 }
 
-html[theme="light"] {
+html[data-theme="light"] {
 	--text: #2b2b2b;   
     --text2: #656565;
 	--accent: #e8a62c; 
