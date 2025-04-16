@@ -75,20 +75,30 @@ function calendarUX(wrapper) {
                     }
                 });
 
-                // adding to the form for confirmation
+                // adding to the DESKTOP-form for confirmation
                 const startInput = document.getElementById("id_start");
                 const endInput = document.getElementById("id_end");
                 const roomSelect = document.getElementById("id_room");
                 const roomSelectFake = document.getElementById("id_room_fake");
-
                 //from and to cant be used here, that's why I do it again:
                 const dynamicStart = Math.min(selectionStartValue, currentValue);
                 const dynamicEnd = Math.max(selectionStartValue, currentValue);
-
                 startInput.value = formatStart(dynamicStart);
                 endInput.value = formatEnd(dynamicEnd);
                 roomSelect.value = selectedRoom; 
                 roomSelectFake.value = selectedRoom;
+
+
+                // adding to the MOBILE-form for confirmation
+                const startInputMobile = document.getElementById("id_start-mobile");
+                const endInputMobile = document.getElementById("id_end-mobile");
+                const roomSelectMobile = document.getElementById("id_room-mobile");
+                const roomSelectFakeMobile = document.getElementById("id_room_fake-mobile");
+                startInputMobile.value = formatStart(dynamicStart);
+                endInputMobile.value = formatEnd(dynamicEnd);
+                roomSelectMobile.value = selectedRoom; 
+                roomSelectFakeMobile.value = selectedRoom;
+                
 
                 // clear
                 selectedSlots.clear();

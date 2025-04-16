@@ -67,7 +67,41 @@
         </div>
         <div class="offcanvas-body">
           <!-- same filters here, just for mobile version -->
-          <p>Filteroptionen hier...</p>
+          <!-- filters here -->
+            <h5>Filter</h5>
+            <h5 class="mb-3">Room Size</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="large" id="filterSizeLarge">
+                <label class="form-check-label" for="filterSizeLarge">Large (bis 10 Personen)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="medium" id="filterSizeMedium">
+                <label class="form-check-label" for="filterSizeMedium">Medium (bis 5 Personen)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="small" id="filterSizeSmall">
+                <label class="form-check-label" for="filterSizeSmall">Small (bis 3 Personen)</label>
+            </div>
+
+            <hr class="my-4">
+
+            <h5 class="mb-3">Instruments</h5>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="piano" id="filterInstrumentPiano">
+                <label class="form-check-label" for="filterInstrumentPiano">Piano</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="drumkit" id="filterInstrumentDrumkit">
+                <label class="form-check-label" for="filterInstrumentDrumkit">Drum Kit</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="amps" id="filterInstrumentAmps">
+                <label class="form-check-label" for="filterInstrumentAmps">Amps (Gitarre / Bass)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="synth" id="filterInstrumentSynth">
+                <label class="form-check-label" for="filterInstrumentSynth">Synthesizer</label>
+            </div>
         </div>
       </div>
   
@@ -121,6 +155,7 @@
       <!-- desktop -->
     <aside id="slot-detail-panel" class="d-none d-md-block col-md-3 p-3 m-1">
         <h5>Details for your selection</h5>
+        <br>
         <form method="post" action="{% url 'rooms:booking' %}" id="booking-form">
             {% csrf_token %}
           
@@ -168,7 +203,48 @@
         <div class="handle text-center py-2 text-white" >
             <div>
                 <i class="fas fa-grip-lines me-2 "></i>
-                
+                <h5>Details for your selection</h5>
+                <br>
+                <form method="post" action="{% url 'rooms:booking' %}" id="booking-form-mobile">
+                    {% csrf_token %}
+                  
+                    <div class="mb-3 d-flex justify-content-between align-items-center form-item-container">
+                        <label for="{{ form.room.id_for_label }}" class="me-3 mb-0">{{ form.room.label }}</label>
+                        {{ form.room|attr:"id:id_room-mobile"|attr:"hidden" }}
+                        
+                        <select name="room_fake_id" id="id_room_fake-mobile" disabled>
+                            {% for room in rooms %}
+                              <option value="{{ room.id }}">{{ room.name }}</option>
+                            {% endfor %}
+                          </select>
+                    </div>
+                  
+                    <div class="mb-3 d-flex justify-content-between align-items-center">
+                        <label for="{{ form.start.id_for_label }}" class="me-3 mb-0">{{ form.start.label }}</label>
+                        {{ form.start|attr:"readonly"|attr:"id:id_start-mobile" }}
+                    </div>
+                  
+                    <div class="mb-3 d-flex justify-content-between align-items-center">
+                        <label for="{{ form.end.id_for_label }}" class="me-3 mb-0">{{ form.end.label }}</label>
+                        {{ form.end|attr:"readonly"|attr:"id:id_end-mobile" }}
+                    </div>
+                  
+                    {{ form.user }} {# hidden input #}
+                  
+                    <button type="submit" class="btn btn-primary mt-3 w-100" id="booking-submit-mobile">Confirm</button>
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <ul>
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                            <li><strong>{{ field|capfirst }}:</strong> {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                  </form>
+                  <p id="form-error-msg-mobile" class="text-danger"></p>
             </div> 
         </div>
         <div class="p-3">
