@@ -1,3 +1,4 @@
+/* global document */
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.getElementById("calendarWrapper");
     document.getElementById("booking-submit").disabled = "true";
@@ -22,14 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // The heavy stuff - selecting time slots in the calendar interface
-function calendarUX(wrapper) {
+function calendarUX() {
     let isSelecting = false;
     let selectionStartValue = null;
     let selectedRoom = null;
     let selectedSlots = new Set();
 
     document.querySelectorAll(".calendar-cell").forEach(cell => {
-        cell.addEventListener("mousedown", (e) => {
+        cell.addEventListener("mousedown", () => {
             removeHighlights();   
             isSelecting = true;
             const hour = parseInt(cell.dataset.hour);
@@ -38,7 +39,6 @@ function calendarUX(wrapper) {
             selectionStartValue = hour * 2 + half;
             selectedSlots.clear();
             highlightCell(cell);
-            console.log("DOWN --------");
             const blocked = cell.dataset.blocked;
             if (blocked=="true") {
                 booking_blocked();
@@ -47,13 +47,13 @@ function calendarUX(wrapper) {
             }
         });
       
-        cell.addEventListener("mouseenter", (e) => {
+        cell.addEventListener("mouseenter", () => {
             if (isSelecting && cell.dataset.room === selectedRoom) {
                 const hour = parseInt(cell.dataset.hour);
                 const half = parseInt(cell.dataset.half);
                 const currentValue = hour * 2 + half;
                 const blocked = cell.dataset.blocked;
-                console.log(blocked);
+                
 
                 const from = Math.min(selectionStartValue, currentValue);
                 const to = Math.max(selectionStartValue, currentValue);
@@ -69,7 +69,7 @@ function calendarUX(wrapper) {
 
                     if (val >= from && val <= to) {
                         highlightCell(c);
-                        console.log("HIGHLIGHT THE CELL!!!");
+                        
                     } else {
                         c.classList.remove("selected-slot");
                     }
@@ -114,7 +114,7 @@ function calendarUX(wrapper) {
             isSelecting = false;
             selectedRoom = null;
             selectionStartValue = null;
-            sendSelectedToCursor(selectedSlots); // here's my function -> ready for my cursor
+            
             
 
         });
@@ -149,27 +149,17 @@ function booking_not_blocked() {
     msg.innerHTML = "";
 }
 
-
-function sendSelectedToCursor(selectedSlots) {
-    console.log(selectedSlots);
-    //click on confirmation, let the cursor add the booking
-
-}
-
-
-
-
 function formatStart(selectionStartValue) {
     const hour = Math.floor(selectionStartValue / 2);
     const minutes = selectionStartValue % 2 === 0 ? "00" : "30";
     let dateform = document.getElementById("myDatePicker");
-    console.log("date: ", dateform.value);
+    
     return `${dateform.value}T${ hour.toString().padStart(2, "0")}:${minutes}`;
   }
 
 function formatEnd(selectionEndValue) {
     selectionEndValue = selectionEndValue + 1
-    console.log("to: ", selectionEndValue);
+    
     let dateform = document.getElementById("myDatePicker");
     const hour = Math.floor(selectionEndValue / 2);
     const minutes = selectionEndValue % 2 === 0 ? "00" : "30";
@@ -178,7 +168,7 @@ function formatEnd(selectionEndValue) {
 
 
 
-document.getElementById("booking-submit").addEventListener("click", function (e) {
+document.getElementById("booking-submit").addEventListener("click", function () {
     
     const realRoom = document.getElementById("id_room");
     const fakeRoom = document.getElementById("id_room_fake");
