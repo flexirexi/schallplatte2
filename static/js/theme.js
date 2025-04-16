@@ -1,4 +1,4 @@
-import { collapseNavBar } from "/static/main/js/base.js";
+
 
 const html = document.documentElement;
 const themeToggle = document.getElementById("theme-toggle");
