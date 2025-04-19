@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // auto fade-out of message -> because it's cool
     setTimeout(() => {
         const alerts = document.querySelectorAll('.auto-dismiss');
-        alerts.forEach((alert) => {
+        alerts.forEach(alert => {
           const bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
           bsAlert.close();
         });

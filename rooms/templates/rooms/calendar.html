@@ -204,33 +204,33 @@
                 <i class="fas fa-grip-lines me-2 "></i>
                 <h5>Details for your selection</h5>
                 <br>
-                <form method="post" action="{% url 'rooms:booking' %}" id="booking-form">
+                <form method="post" action="{% url 'rooms:booking' %}" id="booking-form-mobile">
                     {% csrf_token %}
                   
                     <div class="mb-3 d-flex justify-content-between align-items-center form-item-container">
-                        <label for="{{ form.room.id_for_label }}" class="me-3 mb-0">{{ form.room.label }}</label>
-                        {{ form.room|attr:"id:id_room"|attr:"hidden" }}
+                        <label for="{{ form.room.id_for_label }}-mobile" class="me-3 mb-0">{{ form.room.label }}</label>
+                        {{ form.room|attr:"id:id_room_mobile"|attr:"hidden" }}
                         
-                        <select name="room_fake_id" id="id_room_fake" disabled>
+                        <select name="room_fake_id" id="id_room_fake_mobile" disabled>
                             {% for room in rooms %}
-                              <option value="{{ room.id }}">{{ room.name }}</option>
+                              <option value="{{ room.id }}_mobile">{{ room.name }}</option>
                             {% endfor %}
                           </select>
                     </div>
                   
                     <div class="mb-3 d-flex justify-content-between align-items-center">
-                        <label for="{{ form.start.id_for_label }}" class="me-3 mb-0">{{ form.start.label }}</label>
-                        {{ form.start|attr:"readonly"|attr:"id:id_start" }}
+                        <label for="{{ form.start.id_for_label }}_mobile" class="me-3 mb-0">{{ form.start.label }}</label>
+                        {{ form.start|attr:"readonly"|attr:"id:id_start_mobile" }}
                     </div>
                   
                     <div class="mb-3 d-flex justify-content-between align-items-center">
-                        <label for="{{ form.end.id_for_label }}" class="me-3 mb-0">{{ form.end.label }}</label>
-                        {{ form.end|attr:"readonly"|attr:"id:id_end" }}
+                        <label for="{{ form.end.id_for_label }}_mobile" class="me-3 mb-0">{{ form.end.label }}</label>
+                        {{ form.end|attr:"readonly"|attr:"id:id_end_mobile" }}
                     </div>
                   
                     {{ form.user }} {# hidden input #}
                   
-                    <button type="submit" class="btn btn-primary mt-3 w-100" id="booking-submit">Confirm</button>
+                    <button type="submit" class="btn btn-primary mt-3 w-100" id="booking-submit-mobile">Confirm</button>
                     {% if form.errors %}
                     <div class="alert alert-danger">
                         <ul>

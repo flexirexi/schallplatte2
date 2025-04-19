@@ -147,7 +147,7 @@ html[data-theme] .card:hover {
     box-shadow: 1px 3px 10px #00000060;
 }
 
-html[theme="dark"] .card {
+html[data-theme="dark"] .card {
     background-color: #1a242e;
     border: none;
 }

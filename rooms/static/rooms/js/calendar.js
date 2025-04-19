@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.getElementById("calendarWrapper");
     document.getElementById("booking-submit").disabled = "true";
+    document.getElementById("booking-submit-mobile").disabled = "true";
     if (wrapper) {
         wrapper.scrollTo({
             top: wrapper.scrollHeight * (2 / 3),
@@ -29,7 +30,7 @@ function calendarUX() {
     let selectedRoom = null;
     let selectedSlots = new Set();
 
-    document.querySelectorAll(".calendar-cell").forEach(cell => {
+    document.querySelectorAll(".calendar-cell").forEach((cell) => {
         cell.addEventListener("mousedown", () => {
             removeHighlights();   
             isSelecting = true;
@@ -62,7 +63,7 @@ function calendarUX() {
                 } 
 
 
-                document.querySelectorAll(`.calendar-cell[data-room="${selectedRoom}"]`).forEach(c => {
+                document.querySelectorAll(`.calendar-cell[data-room="${selectedRoom}"]`).forEach((c) => {
                     const h = parseInt(c.dataset.hour);
                     const m = parseInt(c.dataset.half);
                     const val = h * 2 + m;
@@ -91,9 +92,9 @@ function calendarUX() {
 
                 // adding to the MOBILE-form for confirmation
                 const startInputMobile = document.getElementById("id_start-mobile");
-                const endInputMobile = document.getElementById("id_end-mobile");
-                const roomSelectMobile = document.getElementById("id_room-mobile");
-                const roomSelectFakeMobile = document.getElementById("id_room_fake-mobile");
+                const endInputMobile = document.getElementById("id_end_mobile");
+                const roomSelectMobile = document.getElementById("id_room_mobile");
+                const roomSelectFakeMobile = document.getElementById("id_room_fake_mobile");
                 startInputMobile.value = formatStart(dynamicStart);
                 endInputMobile.value = formatEnd(dynamicEnd);
                 roomSelectMobile.value = selectedRoom; 
@@ -133,13 +134,38 @@ function calendarUX() {
             c.classList.remove("selected-slot");
         });
     }
+    document.getElementById("booking-submit").addEventListener("click", function () {
+        const realRoom = document.getElementById("id_room");
+        const fakeRoom = document.getElementById("id_room_fake");
+        realRoom.value = fakeRoom.value;
+    
+        
+        document.getElementById("id_start").readOnly = false;
+        document.getElementById("id_end").readOnly = false;
+    });
+    
+    document.getElementById("booking-submit-mobile").addEventListener("click", function () {
+        
+        const realRoom = document.getElementById("id_room_mobile");
+        const fakeRoom = document.getElementById("id_room_fake_mobile");
+        realRoom.value = fakeRoom.value;
+    
+        
+        document.getElementById("id_start_mobile").readOnly = false;
+        document.getElementById("id_end_mobile").readOnly = false;
+    });
 }
 
 function booking_blocked() {
+    //for desktop
     const btn = document.getElementById("booking-submit");
     const msg = document.getElementById("form-error-msg");
     btn.disabled = true;
-    msg.innerHTML = "No booking possible. Your selection overlaps with existing bookings.";
+
+    //for mobile
+    const btnMobile = document.getElementById("booking-submit-mobile");
+    const msgMobile = document.getElementById("form-error-msg-mobile");
+    msgMobile.innerHTML = "No booking possible. Your selection overlaps with existing bookings.";
 }
 
 function booking_not_blocked() {
@@ -155,7 +181,7 @@ function formatStart(selectionStartValue) {
     let dateform = document.getElementById("myDatePicker");
     
     return `${dateform.value}T${ hour.toString().padStart(2, "0")}:${minutes}`;
-  }
+}
 
 function formatEnd(selectionEndValue) {
     selectionEndValue = selectionEndValue + 1
@@ -165,16 +191,3 @@ function formatEnd(selectionEndValue) {
     const minutes = selectionEndValue % 2 === 0 ? "00" : "30";
     return `${dateform.value}T${hour.toString().padStart(2, "0")}:${minutes}`;
 }
-
-
-
-document.getElementById("booking-submit").addEventListener("click", function () {
-    
-    const realRoom = document.getElementById("id_room");
-    const fakeRoom = document.getElementById("id_room_fake");
-    realRoom.value = fakeRoom.value;
-
-    
-    document.getElementById("id_start").readOnly = false;
-    document.getElementById("id_end").readOnly = false;
-});
